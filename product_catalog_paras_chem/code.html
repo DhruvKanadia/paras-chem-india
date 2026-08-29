@@ -1,0 +1,447 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Products | Paras Chem - Professional B2B Chemical Distribution</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&amp;family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* Custom scrollbar for sidebar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F8FAFC; 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E2E8F0; 
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #cbd5e1; 
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#bec6e0",
+                        "tertiary-fixed-dim": "#68dba9",
+                        "surface-container-high": "#dce9ff",
+                        "on-secondary-fixed": "#00174b",
+                        "surface-container": "#e5eeff",
+                        "chemical-green": "#059669",
+                        "on-tertiary-fixed": "#002114",
+                        "secondary-container": "#316bf3",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface": "#0b1c30",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "border-subtle": "#E2E8F0",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#069669",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary-fixed-variant": "#005137",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#002114",
+                        "surface-tint": "#565e74",
+                        "surface": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#131b2e",
+                        "background": "#f8f9ff",
+                        "outline": "#76777d",
+                        "on-background": "#0b1c30",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "outline-variant": "#c6c6cd",
+                        "tertiary": "#000000",
+                        "secondary-fixed": "#dbe1ff",
+                        "secondary": "#0051d5",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary-container": "#7c839b",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#45464d",
+                        "on-secondary-container": "#fefcff",
+                        "tertiary-fixed": "#85f8c4",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-surface": "#213145",
+                        "surface-gray": "#F8FAFC",
+                        "surface-bright": "#f8f9ff",
+                        "slate-dark": "#0F172A",
+                        "primary": "#000000",
+                        "industrial-blue": "#2563EB",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "48px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "display": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-surface-container-lowest dark:bg-slate-dark border-b border-border-subtle dark:border-outline-variant full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-4 md:px-margin-page max-w-container-max mx-auto h-20">
+<!-- Brand Logo -->
+<a class="text-headline-md font-headline-md font-bold text-primary dark:text-on-primary flex items-center gap-2" href="{{DATA:SCREEN:SCREEN_11}}">
+<span class="material-symbols-outlined text-industrial-blue" style="font-variation-settings: 'FILL' 1;">science</span>
+                Paras Chem
+            </a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center gap-8 h-full">
+<a class="text-industrial-blue dark:text-secondary-fixed border-b-2 border-industrial-blue pb-1 font-label-md text-label-md flex items-center h-full pt-1" href="{{DATA:SCREEN:SCREEN_10}}">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md flex items-center h-full" href="{{DATA:SCREEN:SCREEN_8}}">Industries</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md flex items-center h-full" href="{{DATA:SCREEN:SCREEN_5}}">Services</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md flex items-center h-full" href="{{DATA:SCREEN:SCREEN_6}}">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md flex items-center h-full" href="{{DATA:SCREEN:SCREEN_2}}">Principals</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md flex items-center h-full" href="/resources">Resources</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="pl-10 pr-4 py-2 border border-border-subtle rounded text-body-sm focus:border-industrial-blue focus:ring-1 focus:ring-industrial-blue outline-none w-64 bg-surface-gray transition-all" placeholder="Search CAS, Chemical..." type="text">
+</div>
+<a class="hidden md:block px-4 py-2 text-label-md font-label-md text-industrial-blue border border-border-subtle rounded hover:bg-surface-gray transition-colors" href="{{DATA:SCREEN:SCREEN_4}}">Contact</a>
+<a class="px-4 py-2 text-label-md font-label-md bg-industrial-blue text-on-primary rounded hover:opacity-90 transition-opacity flex items-center gap-2 shadow-sm" href="{{DATA:SCREEN:SCREEN_4}}">Request a Quote</a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-4 md:px-margin-page py-8 flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0 space-y-6">
+<!-- Breadcrumbs -->
+<div class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant mb-6">
+<a class="hover:text-industrial-blue transition-colors" href="{{DATA:SCREEN:SCREEN_11}}">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-medium">Products</span>
+</div>
+<div class="bg-surface-lowest border border-border-subtle rounded p-4">
+<h3 class="font-headline-md text-body-md font-bold text-on-surface mb-4 flex items-center gap-2 border-b border-border-subtle pb-2">
+<span class="material-symbols-outlined text-industrial-blue" style="font-variation-settings: 'FILL' 1;">filter_alt</span>
+                    Filters
+                </h3>
+<!-- Category Filter -->
+<div class="mb-6">
+<h4 class="font-label-md text-label-md text-on-surface font-bold mb-3 uppercase tracking-wider text-on-surface-variant">Category</h4>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm group-hover:text-industrial-blue transition-colors">Industrial Chemicals</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm font-medium text-industrial-blue">Water Treatment</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm group-hover:text-industrial-blue transition-colors">Textile Chemicals</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm group-hover:text-industrial-blue transition-colors">Pharma Intermediates</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm group-hover:text-industrial-blue transition-colors">Specialty Chemicals</span>
+</label>
+</div>
+</div>
+<!-- Industry Filter -->
+<div class="mb-6">
+<h4 class="font-label-md text-label-md text-on-surface font-bold mb-3 uppercase tracking-wider text-on-surface-variant">Industry</h4>
+<div class="relative mb-3">
+<span class="material-symbols-outlined absolute left-2 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">search</span>
+<input class="w-full pl-8 pr-3 py-1.5 border border-border-subtle rounded text-body-sm focus:border-industrial-blue focus:ring-1 focus:ring-industrial-blue outline-none bg-surface-gray" placeholder="Find industry..." type="text">
+</div>
+<div class="space-y-2 max-h-40 overflow-y-auto custom-scrollbar pr-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm group-hover:text-industrial-blue transition-colors">Agriculture</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm group-hover:text-industrial-blue transition-colors">Automotive</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-4 h-4 rounded-sm border-border-subtle text-industrial-blue focus:ring-industrial-blue cursor-pointer" type="checkbox">
+<span class="text-body-sm group-hover:text-industrial-blue transition-colors">Construction</span>
+</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<div class="flex-1 min-w-0">
+<!-- Header & Search -->
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-background mb-2">Chemical Product Catalog</h1>
+<p class="text-body-md text-on-surface-variant max-w-2xl">Browse our extensive inventory of industrial, specialty, and water treatment chemicals. Use CAS numbers or chemical synonyms to find specific compounds.</p>
+<!-- Robust Search Bar -->
+<div class="mt-6 relative z-10 flex">
+<div class="relative flex-1 group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-industrial-blue">manage_search</span>
+</div>
+<input class="block w-full pl-12 pr-4 py-3 border-2 border-border-subtle rounded-l focus:border-industrial-blue focus:ring-0 outline-none text-body-md transition-colors" placeholder="Search by Chemical Name, CAS Number (e.g. 7664-93-9), or Synonym..." type="text">
+<!-- Simulated Autocomplete Dropdown -->
+<div class="hidden group-focus-within:block absolute top-full left-0 right-0 mt-1 bg-surface-lowest border border-border-subtle rounded shadow-lg overflow-hidden bg-white">
+<div class="px-4 py-2 bg-surface-gray border-b border-border-subtle text-label-sm font-label-sm text-on-surface-variant font-bold uppercase tracking-wider">Suggestions</div>
+<ul class="max-h-64 overflow-y-auto">
+<li class="px-4 py-3 hover:bg-surface-gray cursor-pointer flex justify-between items-center border-b border-border-subtle last:border-0">
+<div>
+<span class="text-body-sm font-medium text-on-surface block">Sodium Hypochlorite</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Synonym: Bleach, Liquid Bleach</span>
+</div>
+<span class="text-label-sm font-label-sm bg-surface-container px-2 py-1 rounded text-industrial-blue font-bold">CAS: 7681-52-9</span>
+</li>
+</ul>
+</div>
+</div>
+<button class="bg-industrial-blue text-on-primary px-6 py-3 rounded-r font-label-md text-label-md hover:bg-secondary transition-colors border-2 border-industrial-blue border-l-0 flex items-center gap-2">
+                        Search
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Active Filters & Controls -->
+<div class="flex flex-wrap justify-between items-center mb-6 gap-4 border-b border-border-subtle pb-4">
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Active Filters:</span>
+<span class="inline-flex items-center gap-1 bg-surface-container px-3 py-1 rounded-full text-label-sm font-label-sm text-industrial-blue">
+                        Water Treatment
+                        <button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<button class="text-label-sm font-label-sm text-on-surface-variant hover:text-industrial-blue underline decoration-dotted transition-colors ml-2">Clear All</button>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Showing 42 results</span>
+<select class="border border-border-subtle rounded py-1 pl-2 pr-8 text-label-sm font-label-sm focus:border-industrial-blue focus:ring-1 focus:ring-industrial-blue outline-none bg-surface-lowest">
+<option>Sort by: Name (A-Z)</option>
+<option>Sort by: Category</option>
+</select>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Product Card 1 -->
+<div class="group bg-surface-lowest border border-border-subtle rounded overflow-hidden hover:border-industrial-blue transition-all duration-300 flex flex-col h-full bg-white relative">
+<div class="absolute top-3 right-3 bg-chemical-green/10 text-chemical-green px-2 py-1 rounded text-label-sm font-label-sm font-bold border border-chemical-green/20 z-10 flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-chemical-green"></div>
+                        Available
+                    </div>
+<div class="h-32 bg-surface-gray border-b border-border-subtle flex items-center justify-center p-4 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-multiply filter grayscale" data-alt="A macro studio shot of pristine white chemical powder or crystalline structure against a clean, light clinical gray background. The lighting is bright, harsh, and industrial, emphasizing the pure, technical nature of the material. A subtle glass beaker rim is visible in the extreme foreground blur. Corporate modern aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7o1qL42iZ24Y0UXifGwftkuNLYfEA_JKPdtEHAa8rWQjLd6lf8eSV5cmZQhp67XWU05rXvRgTAiVHJbDNayfne2IwbWfP56zBDaUuiVa0eqvMH6K-oH0z6uzPCtqorr868TyxXsmDz1hZiCfVEc_eJLg-kq8wIK1jmwR2hxcNM3C5fwMinT3eCwuvLUMvjIbA8RDtfWBg8VCgiLeLFA90YHsman-oqD9MhSSk4pAjmGRuqZF29dSc')"></div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant/30 z-10">science</span>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="mb-1 text-label-sm font-label-sm text-industrial-blue font-bold uppercase tracking-wide">Water Treatment</div>
+<h3 class="font-headline-md text-lg font-bold text-on-surface mb-2 leading-tight group-hover:text-industrial-blue transition-colors">Sodium Hypochlorite</h3>
+<div class="space-y-2 mb-4 flex-1">
+<div class="flex items-baseline justify-between border-b border-border-subtle/50 pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">CAS:</span>
+<span class="font-label-md text-label-md text-on-surface">7681-52-9</span>
+</div>
+<div class="flex items-baseline justify-between border-b border-border-subtle/50 pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Purity:</span>
+<span class="font-label-md text-label-md text-on-surface">12.5% - 15%</span>
+</div>
+<div class="flex items-baseline justify-between pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Grades:</span>
+<span class="font-label-md text-label-md text-on-surface text-right truncate w-32">Industrial, NSF</span>
+</div>
+</div>
+<a class="w-full flex items-center justify-center gap-2 border border-industrial-blue text-industrial-blue font-label-md text-label-md py-2 rounded hover:bg-industrial-blue hover:text-on-primary transition-all mt-auto group-hover:shadow-[0_2px_10px_rgba(37,99,235,0.1)]" href="{{DATA:SCREEN:SCREEN_9}}">
+                            View Details
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group bg-surface-lowest border border-border-subtle rounded overflow-hidden hover:border-industrial-blue transition-all duration-300 flex flex-col h-full bg-white relative">
+<div class="absolute top-3 right-3 bg-chemical-green/10 text-chemical-green px-2 py-1 rounded text-label-sm font-label-sm font-bold border border-chemical-green/20 z-10 flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-chemical-green"></div>
+                        Available
+                    </div>
+<div class="h-32 bg-surface-gray border-b border-border-subtle flex items-center justify-center p-4 relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-multiply filter grayscale" data-alt="A high-contrast macro photograph of clear viscous chemical liquid pouring slowly from a glass rod into a beaker. The background is a stark, light industrial white. The lighting creates sharp, architectural reflections on the glass. The mood is precise, clinical, and B2B corporate." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUXCmmVfacH_DkmMW94UCiJXrtWL_ro4_itYTkPIq3lTIt7aCgxaI-byMDVkXWsUinboMPcbewnoD_PwtGIK49Er4K7IV73lcg7BHxKq6lm_GpCzX7NQiialdFATQLUPgyX59jaj0zW6smJZE9N_YknxcPlWamTfGict1qVl-GWbA6t8d5LmqPLGpT_m2DWpcsElm66_ER2QY5gLbqWx88mu-50fNTMembfyjTr4tQw7KZRUmdoGAn')"></div>
+<span class="material-symbols-outlined text-4xl text-on-surface-variant/30 z-10">water_drop</span>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="mb-1 text-label-sm font-label-sm text-industrial-blue font-bold uppercase tracking-wide">Water Treatment</div>
+<h3 class="font-headline-md text-lg font-bold text-on-surface mb-2 leading-tight group-hover:text-industrial-blue transition-colors">Polyaluminium Chloride (PAC)</h3>
+<div class="space-y-2 mb-4 flex-1">
+<div class="flex items-baseline justify-between border-b border-border-subtle/50 pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">CAS:</span>
+<span class="font-label-md text-label-md text-on-surface">1327-41-9</span>
+</div>
+<div class="flex items-baseline justify-between border-b border-border-subtle/50 pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Purity:</span>
+<span class="font-label-md text-label-md text-on-surface">30% Al2O3 min</span>
+</div>
+<div class="flex items-baseline justify-between pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Grades:</span>
+<span class="font-label-md text-label-md text-on-surface text-right truncate w-32">Industrial, Potable</span>
+</div>
+</div>
+<a class="w-full flex items-center justify-center gap-2 border border-industrial-blue text-industrial-blue font-label-md text-label-md py-2 rounded hover:bg-industrial-blue hover:text-on-primary transition-all mt-auto group-hover:shadow-[0_2px_10px_rgba(37,99,235,0.1)]" href="{{DATA:SCREEN:SCREEN_9}}">
+                            View Details
+                            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group bg-surface-lowest border border-border-subtle rounded overflow-hidden hover:border-industrial-blue transition-all duration-300 flex flex-col h-full bg-white relative opacity-75">
+<div class="absolute top-3 right-3 bg-surface-container text-on-surface-variant px-2 py-1 rounded text-label-sm font-label-sm font-bold border border-border-subtle z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                        Out of Stock
+                    </div>
+<div class="h-32 bg-surface-gray border-b border-border-subtle flex items-center justify-center p-4 relative overflow-hidden">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant/30 z-10">experiment</span>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="mb-1 text-label-sm font-label-sm text-industrial-blue font-bold uppercase tracking-wide">Specialty Chemicals</div>
+<h3 class="font-headline-md text-lg font-bold text-on-surface mb-2 leading-tight group-hover:text-industrial-blue transition-colors">Citric Acid Anhydrous</h3>
+<div class="space-y-2 mb-4 flex-1">
+<div class="flex items-baseline justify-between border-b border-border-subtle/50 pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">CAS:</span>
+<span class="font-label-md text-label-md text-on-surface">77-92-9</span>
+</div>
+<div class="flex items-baseline justify-between border-b border-border-subtle/50 pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Purity:</span>
+<span class="font-label-md text-label-md text-on-surface">99.5% - 100.5%</span>
+</div>
+<div class="flex items-baseline justify-between pb-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant">Grades:</span>
+<span class="font-label-md text-label-md text-on-surface text-right truncate w-32">Food, Pharma USP</span>
+</div>
+</div>
+<a class="w-full flex items-center justify-center gap-2 border border-border-subtle text-on-surface-variant font-label-md text-label-md py-2 rounded hover:bg-surface-gray transition-all mt-auto" href="{{DATA:SCREEN:SCREEN_9}}">
+                            View Details
+                        </a>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex justify-center items-center gap-2">
+<button class="w-10 h-10 border border-border-subtle rounded flex items-center justify-center text-on-surface-variant hover:text-industrial-blue hover:border-industrial-blue transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 border border-industrial-blue bg-industrial-blue text-on-primary rounded font-label-md text-label-md flex items-center justify-center">1</button>
+<button class="w-10 h-10 border border-border-subtle rounded text-on-surface hover:text-industrial-blue hover:border-industrial-blue transition-colors font-label-md text-label-md flex items-center justify-center">2</button>
+<button class="w-10 h-10 border border-border-subtle rounded text-on-surface hover:text-industrial-blue hover:border-industrial-blue transition-colors font-label-md text-label-md flex items-center justify-center">3</button>
+<span class="text-on-surface-variant px-2">...</span>
+<button class="w-10 h-10 border border-border-subtle rounded flex items-center justify-center text-on-surface-variant hover:text-industrial-blue hover:border-industrial-blue transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-surface-container-low dark:bg-primary-container border-t border-border-subtle dark:border-outline-variant full-width mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-4 md:px-margin-page py-16 max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1">
+<a href="{{DATA:SCREEN:SCREEN_11}}" class="text-headline-md font-headline-md font-bold text-on-background dark:text-on-primary mb-4 flex items-center gap-2"><span class="material-symbols-outlined text-industrial-blue" style="font-variation-settings: 'FILL' 1;">science</span>Paras Chem</a>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container mb-6 max-w-xs">
+                    Professional B2B chemical distribution, ensuring quality and reliability across the industrial supply chain.
+                </p>
+<div class="text-label-sm font-label-sm text-on-surface-variant dark:text-on-primary-container">
+                    © 2024 Paras Chem. All rights reserved.
+                </div>
+</div>
+<!-- Links Columns -->
+<div class="col-span-1">
+<h4 class="font-headline-md text-body-md font-bold text-on-background dark:text-on-primary mb-4">Company</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="{{DATA:SCREEN:SCREEN_6}}">About Us</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="{{DATA:SCREEN:SCREEN_2}}">Principals</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="/careers">Careers</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-headline-md text-body-md font-bold text-on-background dark:text-on-primary mb-4">Legal</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="/privacy-policy">Privacy Policy</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="/terms-of-service">Terms of Service</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="{{DATA:SCREEN:SCREEN_4}}">Sitemap</a></li>
+</ul>
+</div>
+<!-- Contact Column -->
+<div class="col-span-1">
+<h4 class="font-headline-md text-body-md font-bold text-on-background dark:text-on-primary mb-4">Contact</h4>
+<ul class="space-y-3">
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="{{DATA:SCREEN:SCREEN_4}}">Contact Details</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="/locations">HQ Location</a></li>
+<li class=""><a class="text-body-sm font-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="/newsletter">Newsletter Signup</a></li>
+</ul>
+</div>
+</div>
+</footer>
+
+
+
+
+</body></html>

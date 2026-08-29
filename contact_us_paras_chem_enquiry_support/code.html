@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact Us - Paras Chem</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "on-error-container": "#93000a",
+                        "industrial-blue": "#2563EB",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#005137",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary-fixed": "#002114",
+                        "surface-variant": "#d3e4fe",
+                        "secondary-fixed": "#dbe1ff",
+                        "surface-gray": "#F8FAFC",
+                        "chemical-green": "#059669",
+                        "primary": "#000000",
+                        "border-subtle": "#E2E8F0",
+                        "on-secondary-fixed-variant": "#003ea8",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "inverse-surface": "#213145",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#76777d",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#bec6e0",
+                        "on-primary-container": "#7c839b",
+                        "tertiary-fixed-dim": "#68dba9",
+                        "primary-fixed-dim": "#bec6e0",
+                        "primary-fixed": "#dae2fd",
+                        "surface-container": "#e5eeff",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#b4c5ff",
+                        "on-surface-variant": "#45464d",
+                        "primary-container": "#131b2e",
+                        "on-primary-fixed": "#131b2e",
+                        "surface": "#f8f9ff",
+                        "outline-variant": "#c6c6cd",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-fixed": "#85f8c4",
+                        "surface-container-high": "#dce9ff",
+                        "error": "#ba1a1a",
+                        "on-background": "#0b1c30",
+                        "slate-dark": "#0F172A",
+                        "surface-container-low": "#eff4ff",
+                        "tertiary-container": "#002114",
+                        "on-secondary-container": "#fefcff",
+                        "on-secondary-fixed": "#00174b",
+                        "secondary-container": "#316bf3",
+                        "on-tertiary-container": "#069669",
+                        "surface-tint": "#565e74",
+                        "secondary": "#0051d5",
+                        "surface-dim": "#cbdbf5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-page": "48px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-md": ["13px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--border-subtle, #E2E8F0);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .input-industrial {
+            border: 1px solid #E2E8F0;
+            transition: all 0.2s ease;
+        }
+        .input-industrial:focus {
+            border-color: #2563EB;
+            box-shadow: inset 0 0 0 1px #2563EB;
+            outline: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface-container-lowest border-b border-border-subtle docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-page max-w-container-max mx-auto h-20">
+<div class="flex items-center space-x-8">
+<a class="text-headline-md font-headline-md font-bold text-primary" href="#">Paras Chem</a>
+<nav class="hidden md:flex space-x-6 items-center"><a class="text-on-surface-variant font-label-md text-label-md hover:text-industrial-blue transition-colors duration-200" href="#products">Products</a><a class="text-on-surface-variant font-label-md text-label-md hover:text-industrial-blue transition-colors duration-200" href="#industries">Industries</a><a class="text-on-surface-variant font-label-md text-label-md hover:text-industrial-blue transition-colors duration-200" href="#services">Services</a><a class="text-on-surface-variant font-label-md text-label-md hover:text-industrial-blue transition-colors duration-200" href="#about">About</a><a class="text-on-surface-variant font-label-md text-label-md hover:text-industrial-blue transition-colors duration-200" href="#principals">Principals</a><a class="text-on-surface-variant font-label-md text-label-md hover:text-industrial-blue transition-colors duration-200" href="#resources">Resources</a></nav>
+</div>
+<div class="flex items-center space-x-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant" data-icon="search" style="font-size: 18px;">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-gray border border-border-subtle rounded text-body-sm font-body-sm focus:outline-none focus:border-industrial-blue w-48" placeholder="Search..." type="text">
+</div>
+<button class="text-on-surface-variant hover:text-industrial-blue font-label-md text-label-md transition-colors hidden md:block">Contact</button>
+<button class="bg-industrial-blue text-on-primary px-4 py-2 rounded font-label-md text-label-md hover:bg-secondary transition-colors">Request a Quote</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col w-full px-4 md:px-margin-page max-w-container-max mx-auto py-12 md:py-24 space-y-16">
+<!-- Header Section -->
+<section class="w-full text-center max-w-3xl mx-auto space-y-6">
+<h1 class="font-display text-display text-primary">Get in Touch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Whether you need technical specifications, bulk pricing, or specialized chemical sourcing, our team of experts in Mumbai is ready to assist.
+            </p>
+</section>
+<!-- Bento Grid Layout -->
+<section class="bento-grid w-full">
+<!-- Left Column: Forms & Primary Actions -->
+<div class="col-span-12 lg:col-span-7 space-y-8">
+<!-- Request a Quote Callout -->
+<div class="bg-industrial-blue text-on-primary rounded-lg p-8 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between border border-transparent">
+<div class="mb-4 md:mb-0 max-w-md">
+<h2 class="font-headline-md text-headline-md mb-2 flex items-center">
+<span class="material-symbols-outlined mr-2" data-icon="request_quote" data-weight="fill">request_quote</span>
+                            Request a Bulk Quote
+                        </h2>
+<p class="font-body-md text-body-md opacity-90">Need commercial quantities? Skip the standard form and connect directly with our procurement specialists.</p>
+</div>
+<button class="bg-on-primary text-industrial-blue px-6 py-3 rounded font-label-md text-label-md hover:bg-surface-gray transition-colors shrink-0 font-bold shadow-sm">
+                        Start Quote Request
+                    </button>
+</div>
+<!-- General Enquiry Form (Glass/Surface panel) -->
+<div class="bg-surface-container-lowest border border-border-subtle rounded p-8">
+<h3 class="font-headline-md text-headline-md text-primary mb-6 border-b border-border-subtle pb-4">General Enquiry</h3>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block">Full Name</label>
+<input class="input-industrial w-full p-3 rounded font-body-md text-body-md bg-surface-gray" placeholder="Jane Doe" type="text">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block">Company Name</label>
+<input class="input-industrial w-full p-3 rounded font-body-md text-body-md bg-surface-gray" placeholder="Acme Corp" type="text">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block">Email Address</label>
+<input class="input-industrial w-full p-3 rounded font-body-md text-body-md bg-surface-gray" placeholder="jane@acme.com" type="email">
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block">Phone Number</label>
+<input class="input-industrial w-full p-3 rounded font-body-md text-body-md bg-surface-gray" placeholder="+91 98765 43210" type="tel">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface block">Requirement / Message</label>
+<textarea class="input-industrial w-full p-3 rounded font-body-md text-body-md bg-surface-gray resize-none" placeholder="Please detail your chemical requirements, technical specs, or general questions..." rows="4"></textarea>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="bg-primary text-on-primary px-8 py-3 rounded font-label-md text-label-md hover:bg-industrial-blue transition-colors shadow-sm flex items-center" type="submit">
+                                Submit Enquiry
+                                <span class="material-symbols-outlined ml-2" data-icon="send" style="font-size: 16px;">send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Column: Info & Map -->
+<div class="col-span-12 lg:col-span-5 space-y-8 flex flex-col">
+<!-- Contact Details Card -->
+<div class="bg-surface-gray border border-border-subtle rounded p-8 flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Headquarters</h3>
+<div class="space-y-8">
+<div class="flex items-start">
+<div class="w-10 h-10 rounded bg-secondary-fixed flex items-center justify-center text-industrial-blue mr-4 shrink-0">
+<span class="material-symbols-outlined" data-icon="location_on" data-weight="fill">location_on</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Mumbai Office</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                                    Paras Chem HQ<br>
+                                    123 Industrial Estate, Phase II<br>
+                                    Andheri East, Mumbai 400093<br>
+                                    Maharashtra, India
+                                </p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded bg-secondary-fixed flex items-center justify-center text-industrial-blue mr-4 shrink-0">
+<span class="material-symbols-outlined" data-icon="call" data-weight="fill">call</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Direct Lines</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-label-md">
+                                    Sales: +91 22 1234 5678<br>
+                                    Support: +91 22 8765 4321
+                                </p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded bg-secondary-fixed flex items-center justify-center text-industrial-blue mr-4 shrink-0">
+<span class="material-symbols-outlined" data-icon="mail" data-weight="fill">mail</span>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-1">Email Support</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-label-md">
+                                    sales@paraschem.com<br>
+                                    info@paraschem.com
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="h-64 bg-surface-container-low border border-border-subtle rounded overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A clean, highly detailed, minimalist digital map view focusing on the Andheri East industrial district of Mumbai, India. The map uses a sleek, light-mode color palette with white streets, subtle blue-gray industrial zones, and a prominent dark blue pin marker indicating a corporate headquarters location. The visual style is modern, data-driven, and corporate, conveying precision and establishing trust for a B2B chemical distribution company. No realistic satellite imagery, just clean vector-style map graphics." data-location="Mumbai, India" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz_SAljOgJs3yyqblhzx8Cd6em-AWCzxOauMDchaY6Cac6OplxMo7sdn3wGgf-gJMwvTSRRfrHJ0QX2J8-_S-4ZnaZEJhoNag5PW9pIpqpEhyNP0GSljShOobZmgCOWgp7obT78XkAVbNVm-vQJ0F953jTk0dEJ2IvvfIoEBeVtTt9oRLkNAdLTHtmqb2ozC4qmMB0ucQu9S1ixUMvCeGBxTNOuBY-H_7NhVnTRyYU5s2xeLko-JMi">
+<div class="absolute inset-0 border border-black/5 pointer-events-none rounded"></div>
+<div class="absolute bottom-2 right-2 bg-white px-2 py-1 text-xs font-label-sm border border-border-subtle rounded shadow-sm text-on-surface-variant">Mumbai HQ</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low border-t border-border-subtle full-width mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page py-16 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 space-y-4">
+<div class="text-headline-md font-headline-md font-bold text-on-background">Paras Chem</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-xs">Leading distributor of industrial chemicals and raw materials, ensuring reliable supply chains and operational excellence.</p>
+</div>
+<div class="col-span-1 space-y-4">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Navigation</h4>
+<ul class="space-y-2"><li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-industrial-blue hover:underline transition-all" href="#sitemap">Sitemap</a></li><li class=""><a class="font-body-sm text-body-sm text-industrial-blue font-bold" href="#contact">Contact Details</a></li><li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-industrial-blue hover:underline transition-all" href="#location">HQ Location</a></li></ul>
+</div>
+<div class="col-span-1 space-y-4">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Legal</h4>
+<ul class="space-y-2"><li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-industrial-blue hover:underline transition-all" href="#privacy">Privacy Policy</a></li><li class=""><a class="font-body-sm text-body-sm text-on-surface-variant hover:text-industrial-blue hover:underline transition-all" href="#terms">Terms of Service</a></li></ul>
+</div>
+<div class="col-span-1 space-y-4">
+<h4 class="font-label-md text-label-md text-on-surface uppercase tracking-wider">Stay Updated</h4>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-industrial-blue hover:underline transition-all block" href="#">Newsletter Signup</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-8 pt-4 border-t border-border-subtle">
+                    © 2024 Paras Chem. All rights reserved.
+                </p>
+</div>
+</div>
+</footer>
+
+
+</body></html>

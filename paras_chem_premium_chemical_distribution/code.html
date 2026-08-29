@@ -1,0 +1,360 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Paras Chem - Global Chemical Solutions</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-secondary-container": "#fefcff",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#eff4ff",
+                      "on-error-container": "#93000a",
+                      "border-subtle": "#E2E8F0",
+                      "on-tertiary-container": "#069669",
+                      "slate-dark": "#0F172A",
+                      "secondary-fixed": "#dbe1ff",
+                      "on-primary-fixed": "#131b2e",
+                      "tertiary-container": "#002114",
+                      "surface-variant": "#d3e4fe",
+                      "on-background": "#0b1c30",
+                      "chemical-green": "#059669",
+                      "on-secondary-fixed-variant": "#003ea8",
+                      "surface-tint": "#565e74",
+                      "on-primary-fixed-variant": "#3f465c",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#c6c6cd",
+                      "inverse-on-surface": "#eaf1ff",
+                      "tertiary-fixed": "#85f8c4",
+                      "on-surface": "#0b1c30",
+                      "on-tertiary-fixed-variant": "#005137",
+                      "primary-container": "#131b2e",
+                      "background": "#f8f9ff",
+                      "on-tertiary-fixed": "#002114",
+                      "on-primary-container": "#7c839b",
+                      "surface": "#f8f9ff",
+                      "secondary": "#0051d5",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#b4c5ff",
+                      "surface-dim": "#cbdbf5",
+                      "inverse-primary": "#bec6e0",
+                      "industrial-blue": "#2563EB",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-high": "#dce9ff",
+                      "primary-fixed": "#dae2fd",
+                      "tertiary-fixed-dim": "#68dba9",
+                      "surface-container": "#e5eeff",
+                      "tertiary": "#000000",
+                      "inverse-surface": "#213145",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary": "#ffffff",
+                      "surface-gray": "#F8FAFC",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary-fixed": "#00174b",
+                      "secondary-container": "#316bf3",
+                      "on-surface-variant": "#45464d",
+                      "primary-fixed-dim": "#bec6e0",
+                      "outline": "#76777d",
+                      "on-error": "#ffffff",
+                      "on-secondary": "#ffffff",
+                      "primary": "#000000"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-page": "48px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "label-sm": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg": [
+                              "Hanken Grotesk"
+                      ],
+                      "display": [
+                              "Hanken Grotesk"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Hanken Grotesk"
+                      ],
+                      "label-md": [
+                              "JetBrains Mono"
+                      ],
+                      "headline-lg-mobile": [
+                              "Hanken Grotesk"
+                      ]
+              },
+              "fontSize": {
+                      "label-sm": [
+                              "11px",
+                              {
+                                      "lineHeight": "14px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "13px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "600"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-background antialiased selection:bg-industrial-blue selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<header class="bg-surface-container-lowest dark:bg-slate-dark docked full-width top-0 border-b border-border-subtle dark:border-outline-variant flat no shadows sticky z-50">
+<div class="flex justify-between items-center w-full px-margin-page max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md font-bold text-primary dark:text-on-primary" href="{{DATA:SCREEN:SCREEN_7}}">Paras Chem</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-industrial-blue dark:text-secondary-fixed border-b-2 border-industrial-blue pb-1 font-label-md text-label-md hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors opacity-80 transition-all duration-200" href="{{DATA:SCREEN:SCREEN_6}}">Products</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors" href="{{DATA:SCREEN:SCREEN_4}}">Industries</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors" href="#">Services</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors" href="#">About</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors" href="#">Principals</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md hover:text-industrial-blue dark:hover:text-secondary-fixed transition-colors" href="#">Resources</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 border border-border-subtle rounded bg-surface-gray focus:outline-none focus:border-industrial-blue focus:ring-1 focus:ring-industrial-blue font-body-sm text-body-sm transition-all w-64" placeholder="Search CAS or Product..." type="text">
+</div>
+<a class="hidden md:inline-flex items-center justify-center border border-border-subtle text-on-surface font-label-md text-label-md px-4 py-2 rounded hover:bg-surface-gray transition-colors" href="#">Contact</a>
+<a class="inline-flex items-center justify-center bg-industrial-blue text-on-primary font-label-md text-label-md px-4 py-2 rounded hover:bg-secondary-fixed hover:text-industrial-blue transition-colors" href="#">Request a Quote</a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Premium Hero -->
+<section class="relative bg-slate-dark text-on-primary py-24 md:py-32 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-30 mix-blend-luminosity" data-alt="A highly detailed, professional corporate photograph of a massive, modern chemical processing plant at twilight. The scene features intricate steel piping, large storage tanks, and structural elements illuminated by cool, industrial floodlights against a deep blue sky. The aesthetic is clean, engineered, and highly structured, conveying scale, precision, and industrial integrity. Deep shadows contrast with crisp highlights." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuASUxkBI62iNnRtccKR-T9nETxEc0jFOhx4JTn15RX6pKUkBJNkoh5NsIc2fFc7znHJngXQPO9okFcxbYvqFXNMPM6Fknu5ROtFQIMrP5UpUNuKPYZhPSIqsL-x8ZHqS9MMrFe6Pkfk0ywMWZCEnulKrKGJoKyhKvULaZ_pChNyDF51pm2ewO_wdaxtulmTURZVfj7wuRHuDpot3KkTJAu1H5V7ZKufnrO0ABmwCiHR4jXXkZAWHtl2')"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-page grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="col-span-1 md:col-span-8">
+<h1 class="font-display text-display md:text-5xl lg:text-6xl text-on-primary mb-6 leading-tight">Global Chemical Solutions, Engineered for Industrial Integrity.</h1>
+<p class="font-body-lg text-body-lg text-surface-variant mb-10 max-w-2xl">Leading distributor of industrial, water treatment, and specialty chemicals across India. Delivering precision, scale, and operational excellence to enterprise partners.</p>
+<div class="flex flex-wrap gap-4">
+<a class="inline-flex items-center justify-center bg-industrial-blue text-on-primary font-label-md text-label-md px-6 py-3 rounded hover:bg-secondary-fixed hover:text-industrial-blue transition-colors shadow-sm" href="{{DATA:SCREEN:SCREEN_6}}">Explore Catalog</a>
+<a class="inline-flex items-center justify-center border border-outline-variant text-on-primary font-label-md text-label-md px-6 py-3 rounded hover:bg-surface-variant hover:text-slate-dark transition-colors" href="#">Request a Quote</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Strip -->
+<section class="bg-surface-container-lowest border-b border-border-subtle py-8">
+<div class="max-w-container-max mx-auto px-margin-page grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-border-subtle">
+<div class="text-center px-4">
+<p class="font-display text-headline-lg text-industrial-blue mb-1">30+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Years of Experience</p>
+</div>
+<div class="text-center px-4">
+<p class="font-display text-headline-lg text-industrial-blue mb-1">5,000+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Product SKUs</p>
+</div>
+<div class="text-center px-4">
+<p class="font-display text-headline-lg text-industrial-blue mb-1">12+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Industries Served</p>
+</div>
+<div class="text-center px-4">
+<p class="font-display text-headline-lg text-industrial-blue mb-1">ISO</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">9001:2015 Certified</p>
+</div>
+</div>
+</section>
+<!-- Strategic Categories -->
+<section class="py-24 bg-background">
+<div class="max-w-container-max mx-auto px-margin-page">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-2">Strategic Categories</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Comprehensive chemical portfolios tailored for specialized industrial applications.</p>
+</div>
+<a class="hidden md:inline-flex items-center gap-2 font-label-md text-label-md text-industrial-blue hover:underline" href="#">View All Categories <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Category Card 1 -->
+<div class="group border border-border-subtle bg-surface-container-lowest rounded p-6 hover:border-industrial-blue transition-colors cursor-pointer flex flex-col h-full">
+<div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 text-industrial-blue group-hover:bg-industrial-blue group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="science">science</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2 text-lg">Industrial Chemicals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow">Bulk commodities and foundational chemicals for large-scale manufacturing processes.</p>
+<div class="mt-4 pt-4 border-t border-border-subtle flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">1,200+ Products</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-industrial-blue" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card 2 -->
+<div class="group border border-border-subtle bg-surface-container-lowest rounded p-6 hover:border-industrial-blue transition-colors cursor-pointer flex flex-col h-full" onclick="window.location.href='{{DATA:SCREEN:SCREEN_2}}'">
+<div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 text-industrial-blue group-hover:bg-industrial-blue group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="water_drop">water_drop</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2 text-lg">Water Treatment</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow">Advanced coagulants, flocculants, and biocides for municipal and industrial effluent management.</p>
+<div class="mt-4 pt-4 border-t border-border-subtle flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">450+ Products</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-industrial-blue" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card 3 -->
+<div class="group border border-border-subtle bg-surface-container-lowest rounded p-6 hover:border-industrial-blue transition-colors cursor-pointer flex flex-col h-full">
+<div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 text-industrial-blue group-hover:bg-industrial-blue group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="styler">styler</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2 text-lg">Textile Chemicals</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow">Dyes, auxiliaries, and finishing agents ensuring quality and compliance in textile production.</p>
+<div class="mt-4 pt-4 border-t border-border-subtle flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">800+ Products</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-industrial-blue" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Category Card 4 -->
+<div class="group border border-border-subtle bg-surface-container-lowest rounded p-6 hover:border-industrial-blue transition-colors cursor-pointer flex flex-col h-full">
+<div class="w-12 h-12 bg-surface-gray rounded flex items-center justify-center mb-6 text-industrial-blue group-hover:bg-industrial-blue group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="medication">medication</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2 text-lg">Pharmaceutical Intermediates</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-grow">High-purity building blocks and reagents for active pharmaceutical ingredient (API) synthesis.</p>
+<div class="mt-4 pt-4 border-t border-border-subtle flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">300+ Products</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-industrial-blue" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-primary-container full-width border-t border-border-subtle dark:border-outline-variant flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-page py-16 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<a class="text-headline-md font-headline-md font-bold text-on-background dark:text-on-primary block mb-4" href="{{DATA:SCREEN:SCREEN_7}}">Paras Chem</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Global chemical solutions engineered for industrial integrity and operational excellence.</p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-sm text-label-sm text-on-background uppercase tracking-wider mb-4">Company</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="#">About Us</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="#">Principals</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="#">HQ Location</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="#">Contact Details</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-sm text-label-sm text-on-background uppercase tracking-wider mb-4">Legal &amp; Support</h4>
+<ul class="space-y-2">
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="#">Terms of Service</a></li>
+<li class=""><a class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-primary-container hover:text-industrial-blue dark:hover:text-secondary-fixed underline transition-all" href="#">Sitemap</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-sm text-label-sm text-on-background uppercase tracking-wider mb-4">Newsletter Signup</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Subscribe for industry insights and product updates.</p>
+<form class="flex flex-col gap-2">
+<input class="w-full px-3 py-2 border border-border-subtle rounded bg-surface-container-lowest focus:outline-none focus:border-industrial-blue font-body-sm text-body-sm" placeholder="Business Email" type="email">
+<button class="bg-slate-dark text-on-primary font-label-sm text-label-sm px-4 py-2 rounded hover:bg-industrial-blue transition-colors text-left uppercase tracking-wider" type="submit">Subscribe</button>
+</form>
+</div>
+</div>
+<div class="border-t border-border-subtle dark:border-outline-variant px-margin-page py-6 text-center max-w-container-max mx-auto">
+<p class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Paras Chem. All rights reserved.</p>
+</div>
+</footer>
+
+
+</body></html>
