@@ -33,9 +33,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       
       <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-surface-container-lowest z-[101] menu-panel flex flex-col">
         <div className="flex justify-between items-center p-6 border-b border-border-subtle">
-          <Link href="/" className="flex items-center gap-2 text-primary" onClick={onClose}>
-            <span className="material-symbols-outlined text-industrial-blue" style={{ fontVariationSettings: "'FILL' 1" }}>science</span>
-            <span className="font-headline-md font-bold">Paras Chem</span>
+          <Link href="/" className="flex items-center gap-2" onClick={onClose}>
+            <img src="/logo.jpg" alt="Paras Chem India Logo" className="h-10 object-contain mix-blend-multiply" />
           </Link>
           <button onClick={onClose} aria-label="Close menu" className="text-on-surface">
             <span className="material-symbols-outlined">close</span>

@@ -1,13 +1,22 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import MobileMenu from './MobileMenu';
 
 export default function Header() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      router.push(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
 
   const navLinks = [
     { name: 'Products', href: '/products' },
@@ -20,12 +29,11 @@ export default function Header() {
   return (
     <>
       <header className="bg-surface-container-lowest border-b border-border-subtle sticky top-0 z-50">
-        <div className="max-w-container-max mx-auto px-4 md:px-margin-page h-20 flex justify-between items-center">
+        <div className="max-w-container-max mx-auto px-4 md:px-margin-page h-28 flex justify-between items-center">
           {/* LEFT side */}
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2 text-primary">
-              <span className="material-symbols-outlined text-industrial-blue" style={{ fontVariationSettings: "'FILL' 1" }}>science</span>
-              <span className="font-headline-md font-bold">Paras Chem</span>
+            <Link href="/" className="flex items-center gap-2">
+              <img src="/logo.jpg" alt="Paras Chem India Logo" className="h-24 w-auto object-contain mix-blend-multiply" />
             </Link>
             
             <nav className="hidden md:flex gap-6">
@@ -50,14 +58,16 @@ export default function Header() {
 
           {/* RIGHT side */}
           <div className="flex items-center gap-4">
-            <div className="hidden lg:flex relative items-center">
+            <form onSubmit={handleSearchSubmit} className="hidden lg:flex relative items-center">
               <span className="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none">search</span>
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search CAS, Chemical..."
                 className="pl-10 pr-4 py-2 border border-border-subtle rounded bg-surface-gray w-64 text-body-sm focus:outline-none focus:border-industrial-blue"
               />
-            </div>
+            </form>
             
             <Link
               href="/contact"

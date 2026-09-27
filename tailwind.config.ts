@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        "primary": "#000000",
+        "primary": "#1E40AF",
         "on-primary": "#ffffff",
         "primary-container": "#131b2e",
         "on-primary-container": "#7c839b",
@@ -59,15 +59,17 @@ const config: Config = {
         "on-background": "#0b1c30",
         "slate-dark": "#0F172A",
         "industrial-blue": "#2563EB",
-        "chemical-green": "#059669",
+        "chemical-green": "#0D9488",
         "surface-gray": "#F8FAFC",
         "border-subtle": "#E2E8F0",
+        "accent-amber": "#F59E0B",
+        "accent-warm": "#EA580C",
       },
       borderRadius: {
-        DEFAULT: "0.125rem",
-        lg: "0.25rem",
-        xl: "0.5rem",
-        full: "0.75rem",
+        DEFAULT: "6px",
+        lg: "10px",
+        xl: "16px",
+        full: "9999px",
       },
       spacing: {
         "unit": "4px",
@@ -76,15 +78,15 @@ const config: Config = {
         "container-max": "1280px",
       },
       fontFamily: {
-        "display": ["var(--font-hanken-grotesk)", "sans-serif"],
-        "headline-lg": ["var(--font-hanken-grotesk)", "sans-serif"],
-        "headline-md": ["var(--font-hanken-grotesk)", "sans-serif"],
-        "headline-lg-mobile": ["var(--font-hanken-grotesk)", "sans-serif"],
+        "display": ["var(--font-plus-jakarta)", "sans-serif"],
+        "headline-lg": ["var(--font-plus-jakarta)", "sans-serif"],
+        "headline-md": ["var(--font-plus-jakarta)", "sans-serif"],
+        "headline-lg-mobile": ["var(--font-plus-jakarta)", "sans-serif"],
         "body-lg": ["var(--font-inter)", "sans-serif"],
         "body-md": ["var(--font-inter)", "sans-serif"],
         "body-sm": ["var(--font-inter)", "sans-serif"],
-        "label-md": ["var(--font-jetbrains-mono)", "monospace"],
-        "label-sm": ["var(--font-jetbrains-mono)", "monospace"],
+        "label-md": ["var(--font-inter)", "sans-serif"],
+        "label-sm": ["var(--font-inter)", "sans-serif"],
       },
       fontSize: {
         "display": ["48px", { lineHeight: "56px", letterSpacing: "-0.02em", fontWeight: "700" }],
@@ -96,6 +98,20 @@ const config: Config = {
         "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
         "label-md": ["13px", { lineHeight: "16px", letterSpacing: "0.02em", fontWeight: "500" }],
         "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+      },
+      animation: {
+        marquee: 'marquee 25s linear infinite',
+        marquee2: 'marquee2 25s linear infinite',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
     },
   },

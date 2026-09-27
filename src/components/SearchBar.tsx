@@ -68,7 +68,18 @@ export default function SearchBar({ onSearch, placeholder = 'Search by chemical 
             <ul>
               {filteredProducts.map(product => (
                 <li key={product.slug} className="border-b last:border-0 hover:bg-surface-gray transition-colors">
-                  <Link href={`/products/${product.slug}`} className="px-4 py-3 flex justify-between items-center w-full">
+                  <Link 
+                    href={`/products/${product.slug}`} 
+                    className="px-4 py-3 flex justify-between items-center w-full"
+                    onMouseDown={(e) => {
+                      // Prevent input blur so this click registers immediately
+                      e.preventDefault();
+                    }}
+                    onClick={() => {
+                      setShowDropdown(false);
+                      setQuery(product.name);
+                    }}
+                  >
                     <div className="flex flex-col">
                       <span className="text-body-sm font-medium text-on-surface">{product.name}</span>
                     </div>

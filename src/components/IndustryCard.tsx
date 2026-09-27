@@ -12,18 +12,20 @@ export default function IndustryCard({ slug, name, icon, description, chemicalCo
   return (
     <Link
       href={`/industries/${slug}`}
-      className="group border border-border-subtle bg-surface-container-lowest rounded-lg p-8 hover:border-industrial-blue transition-all cursor-pointer flex flex-col h-full"
+      className="group block bg-white border border-slate-200 rounded-3xl p-10 h-full hover:shadow-2xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-500 flex flex-col relative overflow-hidden"
     >
-      <div className="w-14 h-14 bg-surface-container-low rounded-lg flex items-center justify-center mb-6 text-industrial-blue group-hover:bg-industrial-blue group-hover:text-on-primary transition-colors">
-        <span className="material-symbols-outlined text-2xl">{icon}</span>
+      <div className="mb-8">
+        <span className="material-symbols-outlined text-5xl text-slate-900">{icon}</span>
       </div>
       
-      <h3 className="font-headline-md text-headline-md text-on-background mb-3">{name}</h3>
-      <p className="font-body-sm text-body-sm text-on-surface-variant flex-grow">{description}</p>
+      <h3 className="text-2xl font-semibold tracking-tight text-slate-900 mb-4">{name}</h3>
+      <p className="text-slate-500 leading-relaxed flex-grow">{description}</p>
       
-      <div className="mt-6 pt-4 border-t border-border-subtle flex items-center justify-between">
-        <span className="text-label-md font-label-md text-industrial-blue">Explore Solutions</span>
-        <span className="material-symbols-outlined text-industrial-blue">arrow_forward</span>
+      <div className="mt-12 flex items-center justify-between border-t border-slate-100 pt-6">
+        <span className="text-sm font-medium text-slate-400">{chemicalCount} Chemicals</span>
+        <span className="flex items-center gap-2 text-sm font-semibold text-slate-900 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+          Explore <span className="material-symbols-outlined text-sm">arrow_forward</span>
+        </span>
       </div>
     </Link>
   );

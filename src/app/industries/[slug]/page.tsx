@@ -127,7 +127,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
           <p className="text-body-lg mb-8 text-blue-100">
             Our industry experts can help you select the optimal chemical formulations for your specific manufacturing process.
           </p>
-          <a href="mailto:info@paraschem.com" className="bg-white text-industrial-blue px-8 py-3 rounded font-medium hover:bg-surface-gray transition-colors flex items-center gap-2">
+          <a href="mailto:kanadiadhruv3883@gmail.com" className="bg-white text-industrial-blue px-8 py-3 rounded font-medium hover:bg-surface-gray transition-colors flex items-center gap-2">
             <span className="material-symbols-outlined">mail</span>
             Email Our Experts
           </a>

@@ -1,158 +1,151 @@
 'use client';
 
-import React, { useState, useEffect, useMemo, Suspense } from 'react';
+import React, { useState, useMemo, Suspense } from 'react';
 import { products, categories } from '@/data/products';
-import ProductCard from '@/components/ProductCard';
-import SearchBar from '@/components/SearchBar';
-import FilterSidebar from '@/components/FilterSidebar';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 
 function ProductsContent() {
-  const searchParams = useSearchParams();
-  const categoryParam = searchParams.get('category');
-
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState('name_asc');
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 6;
 
-  useEffect(() => {
-    if (categoryParam) {
-      setSelectedCategories([categoryParam]);
-    }
-  }, [categoryParam]);
-
-
-
-  const clearFilters = () => {
-    setSelectedCategories([]);
-    setSearchQuery('');
-    setCurrentPage(1);
-  };
-
-  const filteredAndSortedProducts = useMemo(() => {
+  // Process data based on search
+  const processedData = useMemo(() => {
     let result = products;
-
-    if (selectedCategories.length > 0) {
-      result = result.filter(p => selectedCategories.includes(p.categorySlug));
-    }
-
     if (searchQuery) {
-      const query = searchQuery.toLowerCase();
-      result = result.filter(
-        p => p.name.toLowerCase().includes(query) || p.casNumber.toLowerCase().includes(query)
+      const q = searchQuery.toLowerCase();
+      result = result.filter(p => 
+        p.name.toLowerCase().includes(q) || 
+        (p.casNumber && p.casNumber.toLowerCase().includes(q))
       );
     }
-
-    result = [...result].sort((a, b) => {
-      if (sortBy === 'name_asc') return a.name.localeCompare(b.name);
-      if (sortBy === 'name_desc') return b.name.localeCompare(a.name);
-      if (sortBy === 'category') return a.categorySlug.localeCompare(b.categorySlug);
-      return 0;
-    });
-
     return result;
-  }, [selectedCategories, searchQuery, sortBy]);
+  }, [searchQuery]);
 
-  const totalPages = Math.ceil(filteredAndSortedProducts.length / itemsPerPage);
-  const paginatedProducts = filteredAndSortedProducts.slice(
-    (currentPage - 1) * itemsPerPage,
-    currentPage * itemsPerPage
-  );
+  // Split categories: the first 6 are vertical columns, the 7th is the horizontal bottom one.
+  const topCategories = categories.filter(c => c.slug !== 'other-items').map(cat => ({
+    ...cat,
+    products: processedData.filter(p => p.categorySlug === cat.slug)
+  }));
+  
+  const bottomCategory = categories.find(c => c.slug === 'other-items');
+  const bottomCategoryProducts = bottomCategory ? processedData.filter(p => p.categorySlug === bottomCategory.slug) : [];
 
   return (
-    <div className="px-margin-page py-12 max-w-container-max mx-auto">
-      <nav className="text-body-sm text-on-surface-variant mb-8">
-        <Link href="/" className="hover:text-industrial-blue">Home</Link>
-        <span className="mx-2">&gt;</span>
-        <span className="text-on-surface">Products</span>
-      </nav>
+    <div className="bg-slate-50 min-h-screen font-sans">
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          opacity: 0;
+        }
+      `}} />
 
-      <div className="flex flex-col md:flex-row gap-gutter">
-        <aside className="w-full md:w-64 shrink-0">
-          <FilterSidebar
-            selectedCategories={selectedCategories}
-            onCategoryChange={setSelectedCategories}
-            resultCount={filteredAndSortedProducts.length}
-          />
-        </aside>
+      {/* Shorter Hero Section */}
+      <section className="relative bg-slate-dark text-white pt-32 pb-24 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-dark to-transparent"></div>
+        
+        <div className="max-w-7xl mx-auto text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in-up tracking-tighter">
+            The Product <span className="text-slate-500">Index.</span>
+          </h1>
 
-        <main className="flex-1">
-          <header className="mb-8">
-            <h1 className="font-display text-display mb-4">Chemical Product Catalog</h1>
-            <p className="text-body-lg text-on-surface-variant">Browse our comprehensive range of high-quality industrial chemicals.</p>
-          </header>
-
-          <div className="mb-6">
-            <SearchBar onSearch={(query) => { setSearchQuery(query); setCurrentPage(1); }} />
+          {/* Search Bar */}
+          <div className="max-w-xl mx-auto relative animate-fade-in-up group" style={{ animationDelay: '0.1s' }}>
+            <span className="material-symbols-outlined absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 text-xl group-focus-within:text-white transition-colors">search</span>
+            <input 
+              type="text" 
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search across all categories..."
+              className="w-full bg-white/5 border border-white/10 text-white px-5 py-3 rounded-full shadow-lg focus:outline-none focus:bg-white/10 focus:border-white/30 backdrop-blur-md transition-all pl-12 placeholder:text-slate-500"
+            />
           </div>
+        </div>
+      </section>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-8 pb-4 border-b border-border-subtle">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="text-body-sm text-on-surface-variant">{filteredAndSortedProducts.length} Results</span>
-              {selectedCategories.length > 0 && (
-                <>
-                  <span className="mx-2 text-border-subtle">|</span>
-                  {selectedCategories.map(cat => (
-                    <span key={cat} className="flex items-center gap-1 bg-surface-gray px-3 py-1 rounded-full text-body-sm border border-border-subtle">
-                      {categories.find(c => c.slug === cat)?.name || cat}
-                      <button onClick={() => setSelectedCategories(prev => prev.filter(c => c !== cat))} className="material-symbols-outlined text-sm hover:text-industrial-blue">close</button>
-                    </span>
+      {/* Grid Layout Section */}
+      <section className="relative -mt-12 z-20 pb-32 px-4 max-w-[1600px] mx-auto w-full">
+        
+        {/* TOP ROW: Vertical Cards (Grid of 6) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 mb-4 items-start">
+          {topCategories.map((cat, i) => (
+            <div 
+              key={cat.slug} 
+              className="bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col animate-fade-in-up hover:border-slate-300 hover:shadow-lg transition-all duration-300 overflow-hidden"
+              style={{ animationDelay: `${0.1 + (i * 0.05)}s` }}
+            >
+              {/* Card Header */}
+              <div className="bg-slate-50 p-5 border-b border-slate-100 flex flex-col">
+                <h2 className="text-lg font-bold text-slate-900 leading-tight mb-1">{cat.name}</h2>
+                <div className="text-[10px] font-mono text-slate-400 tracking-wider uppercase">
+                  {cat.products.length} Products
+                </div>
+              </div>
+
+              {/* Card Product List (No Internal Scrolling) */}
+              <div className="flex-1 p-3 space-y-1">
+                {cat.products.length > 0 ? (
+                  cat.products.map(product => (
+                    <Link 
+                      key={product.slug} 
+                      href={`/products/${product.slug}`}
+                      className="group flex flex-col p-3 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100"
+                    >
+                      <h3 className="font-semibold text-slate-800 text-sm leading-snug group-hover:text-slate-600 transition-colors">{product.name}</h3>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="flex flex-col items-center justify-center text-slate-400 p-4 text-center py-10">
+                    <span className="material-symbols-outlined text-2xl mb-2 opacity-30">search_off</span>
+                    <p className="text-xs">No matches.</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* BOTTOM ROW: Horizontal Card for General Chemicals */}
+        {bottomCategory && (
+          <div 
+            className="bg-white border border-slate-200 rounded-2xl shadow-sm flex flex-col md:flex-row animate-fade-in-up hover:border-slate-300 hover:shadow-lg transition-all duration-300 overflow-hidden mt-6"
+            style={{ animationDelay: '0.5s' }}
+          >
+            {/* Header / Sidebar for Bottom Card */}
+            <div className="bg-slate-50 p-6 md:w-64 border-b md:border-b-0 md:border-r border-slate-100 flex flex-col justify-center">
+              <h2 className="text-2xl font-bold text-slate-900 leading-tight mb-2">{bottomCategory.name}</h2>
+              <div className="inline-flex px-3 py-1 bg-white border border-slate-200 rounded-full text-[10px] font-mono text-slate-400 tracking-wider uppercase self-start">
+                {bottomCategoryProducts.length} Products
+              </div>
+            </div>
+
+            {/* List for Bottom Card (No Internal Scrolling) */}
+            <div className="flex-1 p-4 md:p-6">
+              {bottomCategoryProducts.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
+                  {bottomCategoryProducts.map(product => (
+                    <Link 
+                      key={product.slug} 
+                      href={`/products/${product.slug}`}
+                      className="group flex flex-col p-3 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100"
+                    >
+                      <h3 className="font-semibold text-slate-800 text-sm leading-snug group-hover:text-slate-600 transition-colors truncate" title={product.name}>{product.name}</h3>
+                    </Link>
                   ))}
-                  <button onClick={clearFilters} className="text-body-sm text-industrial-blue hover:underline ml-2">Clear All</button>
-                </>
+                </div>
+              ) : (
+                <div className="flex flex-col items-center justify-center text-slate-400 p-8 text-center">
+                  <span className="material-symbols-outlined text-3xl mb-2 opacity-30">search_off</span>
+                  <p className="text-sm">No matches found in this category.</p>
+                </div>
               )}
             </div>
-            
-            <div className="flex items-center gap-2">
-              <label htmlFor="sort" className="text-body-sm text-on-surface-variant">Sort by:</label>
-              <select 
-                id="sort"
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="border border-border-subtle rounded px-3 py-1 text-body-sm bg-white"
-              >
-                <option value="name_asc">Name A-Z</option>
-                <option value="name_desc">Name Z-A</option>
-                <option value="category">Category</option>
-              </select>
-            </div>
           </div>
+        )}
 
-          {paginatedProducts.length > 0 ? (
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 mb-12">
-              {paginatedProducts.map(product => (
-                <ProductCard key={product.slug} product={product} />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-20 bg-surface-gray rounded border border-border-subtle mb-12">
-              <p className="text-body-lg text-on-surface-variant">No products found matching your criteria.</p>
-              <button onClick={clearFilters} className="mt-4 text-industrial-blue hover:underline">Clear all filters</button>
-            </div>
-          )}
-
-          {totalPages > 1 && (
-            <div className="flex justify-center gap-2">
-              {Array.from({ length: totalPages }).map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentPage(i + 1)}
-                  className={`w-10 h-10 rounded flex items-center justify-center text-body-sm transition-colors ${
-                    currentPage === i + 1 
-                      ? 'bg-industrial-blue text-on-primary' 
-                      : 'border border-border-subtle hover:border-industrial-blue text-on-surface'
-                  }`}
-                >
-                  {i + 1}
-                </button>
-              ))}
-            </div>
-          )}
-        </main>
-      </div>
+      </section>
     </div>
   );
 }
@@ -160,8 +153,8 @@ function ProductsContent() {
 export default function ProductsPage() {
   return (
     <>
-      <title>Products | Paras Chem</title>
-      <Suspense fallback={<div className="p-20 text-center">Loading products...</div>}>
+      <title>The Product Index | Paras Chem</title>
+      <Suspense fallback={<div className="min-h-screen bg-slate-dark flex items-center justify-center text-white/50 font-mono text-sm tracking-widest uppercase">Initializing Catalog...</div>}>
         <ProductsContent />
       </Suspense>
     </>

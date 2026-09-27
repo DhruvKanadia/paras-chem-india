@@ -61,13 +61,13 @@ export default function TrustStrip() {
   return (
     <section className="bg-surface-container-lowest border-b border-border-subtle py-8">
       <div className="max-w-container-max mx-auto px-4 md:px-margin-page grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-border-subtle">
-        <AnimatedNumber value={30} suffix="+" label="Years of Experience" />
-        <AnimatedNumber value={5000} suffix="+" label="Product SKUs" />
-        <AnimatedNumber value={12} suffix="+" label="Industries Served" />
+        <AnimatedNumber value={27} suffix="+" label="Years of Experience" />
+        <AnimatedNumber value={100} suffix="+" label="Chemical Products" />
+        <AnimatedNumber value={7} suffix="+" label="Industries Served" />
         <div className="text-center px-4 flex flex-col justify-center">
-          <div className="font-display text-headline-lg text-industrial-blue mb-1">ISO</div>
+          <div className="font-display text-headline-lg text-industrial-blue mb-1">ISO & MSME</div>
           <div className="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
-            9001:2015 Certified
+            Certified Company
           </div>
         </div>
       </div>

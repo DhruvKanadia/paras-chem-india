@@ -85,56 +85,60 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
             </section>
 
             {/* Technical Specifications */}
-            <section>
-              <h2 className="font-headline-lg mb-6">Technical Specifications</h2>
-              <div className="overflow-x-auto rounded border border-border-subtle">
-                <table className="w-full text-left border-collapse">
-                  <thead>
-                    <tr className="bg-slate-dark text-white">
-                      <th className="py-3 px-4 font-medium text-body-md border-b border-slate-dark">Property</th>
-                      <th className="py-3 px-4 font-medium text-body-md border-b border-slate-dark">Value</th>
-                      <th className="py-3 px-4 font-medium text-body-md border-b border-slate-dark">Unit</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {product.specifications.map((spec, i) => (
-                      <tr key={i} className="border-b border-border-subtle last:border-0 hover:bg-surface-gray">
-                        <td className="py-3 px-4 text-body-md text-on-surface font-medium">{spec.property}</td>
-                        <td className="py-3 px-4 text-body-md text-on-surface-variant">{spec.value}</td>
-                        <td className="py-3 px-4 text-body-md text-on-surface-variant">{spec.unit || '-'}</td>
+            {product.specifications && product.specifications.length > 0 && (
+              <section>
+                <h2 className="font-headline-lg mb-6">Technical Specifications</h2>
+                <div className="overflow-x-auto rounded border border-border-subtle">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="bg-slate-dark text-white">
+                        <th className="py-3 px-4 font-medium text-body-md border-b border-slate-dark">Property</th>
+                        <th className="py-3 px-4 font-medium text-body-md border-b border-slate-dark">Value</th>
+                        <th className="py-3 px-4 font-medium text-body-md border-b border-slate-dark">Unit</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </section>
+                    </thead>
+                    <tbody>
+                      {product.specifications.map((spec, i) => (
+                        <tr key={i} className="border-b border-border-subtle last:border-0 hover:bg-surface-gray">
+                          <td className="py-3 px-4 text-body-md text-on-surface font-medium">{spec.property}</td>
+                          <td className="py-3 px-4 text-body-md text-on-surface-variant">{spec.value}</td>
+                          <td className="py-3 px-4 text-body-md text-on-surface-variant">{spec.unit || '-'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            )}
 
             {/* Applications & Industries */}
-            <section>
-              <h2 className="font-headline-lg mb-6">Applications & Industries</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {product.applications.map((app, i) => {
-                  const cardContent = (
-                    <div className="p-6 rounded border border-border-subtle bg-white h-full hover:border-industrial-blue transition-colors">
-                      <div className="flex items-center gap-3 mb-3">
-                        <span className="material-symbols-outlined text-industrial-blue">{app.icon || 'science'}</span>
-                        <h3 className="font-headline-md">{app.title}</h3>
+            {product.applications && product.applications.length > 0 && (
+              <section>
+                <h2 className="font-headline-lg mb-6">Applications & Industries</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {product.applications.map((app, i) => {
+                    const cardContent = (
+                      <div className="p-6 rounded border border-border-subtle bg-white h-full hover:border-industrial-blue transition-colors">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="material-symbols-outlined text-industrial-blue">{app.icon || 'science'}</span>
+                          <h3 className="font-headline-md">{app.title}</h3>
+                        </div>
+                        <p className="text-body-md text-on-surface-variant">{app.description}</p>
                       </div>
-                      <p className="text-body-md text-on-surface-variant">{app.description}</p>
-                    </div>
-                  );
-
-                  if (app.industrySlug) {
-                    return (
-                      <Link key={i} href={`/industries/${app.industrySlug}`} className="block">
-                        {cardContent}
-                      </Link>
                     );
-                  }
-                  return <div key={i}>{cardContent}</div>;
-                })}
-              </div>
-            </section>
+
+                    if (app.industrySlug) {
+                      return (
+                        <Link key={i} href={`/industries/${app.industrySlug}`} className="block">
+                          {cardContent}
+                        </Link>
+                      );
+                    }
+                    return <div key={i}>{cardContent}</div>;
+                  })}
+                </div>
+              </section>
+            )}
           </div>
 
           {/* RIGHT COLUMN */}
@@ -148,24 +152,24 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               <h3 className="font-headline-md mb-4">Documents</h3>
               <ul className="space-y-3">
                 <li>
-                  <a href="#" className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
+                  <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/919326772266?text=${encodeURIComponent(`Hi, I would like to request the Safety Data Sheet (SDS) for ${product.name}. Please share it.`)}`} className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
                     <span className="material-symbols-outlined text-industrial-blue">picture_as_pdf</span>
-                    <span className="text-body-md flex-1 group-hover:text-industrial-blue">Safety Data Sheet (SDS)</span>
-                    <span className="material-symbols-outlined text-border-subtle group-hover:text-industrial-blue">download</span>
+                    <span className="text-body-md flex-1 group-hover:text-industrial-blue">Request via WhatsApp</span>
+                    <span className="material-symbols-outlined text-border-subtle group-hover:text-industrial-blue">chat</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
+                  <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/919326772266?text=${encodeURIComponent(`Hi, I would like to request the Technical Data Sheet (TDS) for ${product.name}. Please share it.`)}`} className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
                     <span className="material-symbols-outlined text-industrial-blue">description</span>
-                    <span className="text-body-md flex-1 group-hover:text-industrial-blue">Technical Data Sheet (TDS)</span>
-                    <span className="material-symbols-outlined text-border-subtle group-hover:text-industrial-blue">download</span>
+                    <span className="text-body-md flex-1 group-hover:text-industrial-blue">Request via WhatsApp</span>
+                    <span className="material-symbols-outlined text-border-subtle group-hover:text-industrial-blue">chat</span>
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
+                  <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/919326772266?text=${encodeURIComponent(`Hi, I would like to request the Certificate of Analysis for ${product.name}. Please share it.`)}`} className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
                     <span className="material-symbols-outlined text-chemical-green">verified</span>
-                    <span className="text-body-md flex-1 group-hover:text-chemical-green">Certificate of Analysis</span>
-                    <span className="material-symbols-outlined text-border-subtle group-hover:text-chemical-green">download</span>
+                    <span className="text-body-md flex-1 group-hover:text-chemical-green">Request via WhatsApp</span>
+                    <span className="material-symbols-outlined text-border-subtle group-hover:text-chemical-green">chat</span>
                   </a>
                 </li>
               </ul>

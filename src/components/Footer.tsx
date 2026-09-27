@@ -10,123 +10,156 @@ export default function Footer() {
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-
     setStatus('loading');
-    
     try {
       const response = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
       });
-
-      if (response.ok) {
-        setStatus('success');
-        setEmail('');
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      setStatus('error');
-    }
+      if (response.ok) { setStatus('success'); setEmail(''); }
+      else { setStatus('error'); }
+    } catch { setStatus('error'); }
   };
 
   return (
-    <footer className="bg-surface-container-low border-t border-border-subtle mt-auto">
-      <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter">
-          {/* Column 1: Brand */}
-          <div className="flex flex-col gap-4">
-            <Link href="/" className="flex items-center gap-2 text-primary">
-              <span className="material-symbols-outlined text-industrial-blue" style={{ fontVariationSettings: "'FILL' 1" }}>science</span>
-              <span className="font-headline-md font-bold">Paras Chem</span>
+    <footer className="bg-slate-900 text-white mt-auto">
+      {/* Top CTA Band */}
+      <div className="bg-gradient-to-r from-blue-600 to-blue-800">
+        <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-2xl font-bold text-white">Ready to source chemicals?</h3>
+            <p className="text-blue-100 mt-1">Get competitive quotes from India's trusted distributor.</p>
+          </div>
+          <div className="flex gap-3">
+            <Link href="/contact" className="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
+              Request a Quote
             </Link>
-            <p className="text-body-sm text-on-surface-variant">
-              Professional B2B chemical distribution, ensuring quality and reliability across the industrial supply chain.
+            <a href="tel:+919323667667" className="border border-white/30 text-white px-6 py-3 rounded-xl font-semibold hover:bg-white/10 transition-colors">
+              Call Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Grid */}
+      <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand Column */}
+          <div className="lg:col-span-1">
+            <Link href="/">
+              <img src="/logo.jpg" alt="Paras Chem India" className="h-20 w-auto object-contain brightness-0 invert mb-4" />
+            </Link>
+            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+              One of India's leading chemical distributors, supplying high-quality chemicals across 7+ industries for over 27 years.
             </p>
-            <p className="text-label-sm text-on-surface-variant mt-2">
-              © 2025 Paras Chem. All rights reserved.
-            </p>
+            <div className="flex gap-3">
+              <a href="mailto:kanadiadhruv3883@gmail.com" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Email">
+                <span className="material-symbols-outlined text-lg">mail</span>
+              </a>
+              <a href="https://wa.me/919326772266" target="_blank" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-green-600 transition-colors" title="WhatsApp">
+                <span className="material-symbols-outlined text-lg">chat</span>
+              </a>
+              <a href="tel:+919323667667" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Call">
+                <span className="material-symbols-outlined text-lg">call</span>
+              </a>
+            </div>
           </div>
 
-          {/* Column 2: Company */}
+          {/* Quick Links */}
           <div>
-            <h3 className="font-headline-md text-body-md font-bold mb-4 text-on-surface">Company</h3>
-            <ul className="flex flex-col gap-3">
-              <li>
-                <Link href="/about" className="text-body-sm text-on-surface-variant hover:text-industrial-blue underline transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/principals" className="text-body-sm text-on-surface-variant hover:text-industrial-blue underline transition-colors">
-                  Principals
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-body-sm text-on-surface-variant hover:text-industrial-blue underline transition-colors">
-                  Careers
-                </Link>
-              </li>
+            <h4 className="text-white font-semibold text-lg mb-5">Quick Links</h4>
+            <ul className="space-y-3">
+              {[
+                { name: 'Products', href: '/products' },
+                { name: 'Industries', href: '/industries' },
+                { name: 'About Us', href: '/about' },
+                { name: 'Services', href: '/services' },
+                { name: 'Principals', href: '/principals' },
+                { name: 'Contact', href: '/contact' },
+              ].map(link => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+                    <span className="material-symbols-outlined text-xs">chevron_right</span>
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Legal */}
+          {/* Contact Info */}
           <div>
-            <h3 className="font-headline-md text-body-md font-bold mb-4 text-on-surface">Legal</h3>
-            <ul className="flex flex-col gap-3">
-              <li>
-                <Link href="#" className="text-body-sm text-on-surface-variant hover:text-industrial-blue underline transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-body-sm text-on-surface-variant hover:text-industrial-blue underline transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-body-sm text-on-surface-variant hover:text-industrial-blue underline transition-colors">
-                  Sitemap
-                </Link>
-              </li>
-            </ul>
+            <h4 className="text-white font-semibold text-lg mb-5">Contact Us</h4>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-blue-400 mt-0.5">location_on</span>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  313, Ind.Est, Gala Industrial Complex,<br />
+                  Dindayal Upadhyay Marg, Siddharth Nagar,<br />
+                  Mulund West, Mumbai - 400080
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-blue-400">call</span>
+                <div className="text-sm">
+                  <a href="tel:+919323667667" className="text-slate-400 hover:text-white transition-colors">+91-9323667667</a>
+                  <span className="text-slate-600 mx-1">|</span>
+                  <a href="tel:+919136003604" className="text-slate-400 hover:text-white transition-colors">+91-9136003604</a>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="material-symbols-outlined text-blue-400">mail</span>
+                <a href="mailto:kanadiadhruv3883@gmail.com" className="text-slate-400 hover:text-white transition-colors text-sm">kanadiadhruv3883@gmail.com</a>
+              </div>
+              <div className="mt-4 pt-4 border-t border-slate-800">
+                <p className="text-xs text-slate-500">GSTIN: 27ACVPK1617L1Z4</p>
+                <p className="text-xs text-slate-500">UDYAM: UDYAM-MH-18-0084113</p>
+              </div>
+            </div>
           </div>
 
-          {/* Column 4: Newsletter */}
+          {/* Newsletter */}
           <div>
-            <h3 className="font-headline-md text-body-md font-bold mb-4 text-on-surface">Stay Updated</h3>
-            <p className="text-body-sm text-on-surface-variant mb-4">
-              Subscribe for industry insights and product updates.
+            <h4 className="text-white font-semibold text-lg mb-5">Stay Updated</h4>
+            <p className="text-slate-400 text-sm mb-4">
+              Subscribe for the latest product updates and industry news.
             </p>
-            
             {status === 'success' ? (
-              <div className="bg-chemical-green/10 text-chemical-green p-3 rounded border border-chemical-green/20 text-body-sm">
-                Thanks for subscribing!
+              <div className="bg-green-500/10 text-green-400 p-4 rounded-xl border border-green-500/20 text-sm">
+                ✓ Thanks for subscribing!
               </div>
             ) : (
-              <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
+              <form onSubmit={handleSubscribe} className="space-y-3">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Email address"
+                  placeholder="Enter your email"
                   required
-                  className="w-full px-3 py-2 border border-border-subtle rounded bg-surface-container-lowest text-body-sm focus:outline-none focus:border-industrial-blue"
+                  className="w-full px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder-slate-500 text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
                 />
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="bg-slate-dark text-on-primary font-label-sm text-label-sm px-4 py-2 rounded uppercase tracking-wider hover:bg-industrial-blue transition-colors disabled:opacity-70 text-left w-fit"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-xl transition-colors disabled:opacity-50 text-sm"
                 >
-                  {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
+                  {status === 'loading' ? 'Subscribing...' : 'Subscribe →'}
                 </button>
                 {status === 'error' && (
-                  <p className="text-error text-label-sm mt-1">Failed to subscribe. Please try again.</p>
+                  <p className="text-red-400 text-xs">Failed to subscribe. Please try again.</p>
                 )}
               </form>
             )}
           </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-800">
+        <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Paras Chem India. All rights reserved.</p>
+          <p className="text-slate-600 text-xs">Est. 1999 · 27+ Years of Excellence · ISO 9001:2015 Certified</p>
         </div>
       </div>
     </footer>

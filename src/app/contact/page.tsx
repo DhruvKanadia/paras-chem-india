@@ -81,13 +81,19 @@ export default function ContactPage() {
                 </div>
                 <p className="text-blue-100">Looking for industrial-scale quantities? Get specialized pricing for large volume orders.</p>
               </div>
-              <button className="bg-white text-industrial-blue px-6 py-3 rounded font-medium hover:bg-gray-100 transition-colors shrink-0 whitespace-nowrap">
+              <button 
+                onClick={() => {
+                  const formElement = document.getElementById('enquiry-form-section');
+                  if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="bg-white text-industrial-blue px-6 py-3 rounded font-medium hover:bg-gray-100 transition-colors shrink-0 whitespace-nowrap"
+              >
                 Start Quote Request
               </button>
             </div>
 
             {/* General Enquiry Form */}
-            <div className="bg-white border border-border-subtle rounded p-8">
+            <div id="enquiry-form-section" className="bg-white border border-border-subtle rounded p-8">
               <h3 className="font-headline-lg mb-6 border-b border-border-subtle pb-4">General Enquiry</h3>
               
               <form onSubmit={handleSubmit} className="space-y-5">
@@ -181,9 +187,10 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-label-md mb-1">Address</h4>
                     <p className="text-body-md text-on-surface-variant">
-                      123 Industrial Estate, Phase 4<br />
-                      Chemical Zone, Gujarat<br />
-                      India 380015
+                      313, Ind.Est, Gala Industrial Complex,<br />
+                      Dindayal Upadhyay Marg,<br />
+                      Siddharth Nagar, Mulund West,<br />
+                      Mumbai, Maharashtra 400080
                     </p>
                   </div>
                 </div>
@@ -195,8 +202,10 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-label-md mb-1">Phone</h4>
                     <p className="text-body-md text-on-surface-variant">
-                      +91 (123) 456-7890<br />
-                      <span className="text-body-sm text-on-surface-variant/70">Mon-Fri, 9am - 6pm IST</span>
+                      <span className="text-body-sm font-medium">PO Confirmation:</span> <a href="tel:+919323667667" className="hover:text-industrial-blue">+91-9323667667</a><br />
+                      <span className="text-body-sm font-medium">Dispatch / Invoice / Accounts:</span> <a href="tel:+919136003604" className="hover:text-industrial-blue">+91-9136003604</a><br />
+                      <span className="text-body-sm font-medium">Payment Related:</span> <a href="tel:+919833658942" className="hover:text-industrial-blue">+91-9833658942</a><br />
+                      <span className="text-body-sm text-on-surface-variant/70">Mon-Sat, 9am - 6pm IST</span>
                     </p>
                   </div>
                 </div>
@@ -208,8 +217,32 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-label-md mb-1">Email</h4>
                     <p className="text-body-md text-on-surface-variant">
-                      info@paraschem.com<br />
-                      sales@paraschem.com
+                      <a href="mailto:kanadiadhruv3883@gmail.com" className="hover:text-industrial-blue">kanadiadhruv3883@gmail.com</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded bg-white border border-border-subtle flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-industrial-blue">language</span>
+                  </div>
+                  <div>
+                    <h4 className="font-label-md mb-1">Website</h4>
+                    <p className="text-body-md text-on-surface-variant">
+                      <a href="https://www.paraschemindia.com" target="_blank" rel="noopener noreferrer" className="hover:text-industrial-blue">www.paraschemindia.com</a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded bg-white border border-border-subtle flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-industrial-blue">badge</span>
+                  </div>
+                  <div>
+                    <h4 className="font-label-md mb-1">Registration</h4>
+                    <p className="text-body-md text-on-surface-variant">
+                      GSTIN: 27ACVPK1617L1Z4<br />
+                      UDYAM: UDYAM-MH-18-0084113
                     </p>
                   </div>
                 </div>
