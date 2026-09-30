@@ -73,20 +73,20 @@ export default function ContactPage() {
           {/* LEFT COLUMN */}
           <div className="col-span-12 lg:col-span-7 space-y-8">
             {/* Bulk Quote Banner */}
-            <div className="bg-industrial-blue text-on-primary rounded-lg p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-2">
+            <div className="bg-industrial-blue text-on-primary rounded-lg p-8 flex flex-col items-center justify-center text-center gap-6">
+              <div className="flex-1 flex flex-col items-center text-center">
+                <div className="flex items-center justify-center gap-3 mb-2">
                   <span className="material-symbols-outlined text-3xl">request_quote</span>
-                  <h2 className="font-headline-lg">Request a Bulk Quote</h2>
+                  <h2 className="font-headline-lg text-center">Request a Bulk Quote</h2>
                 </div>
-                <p className="text-blue-100">Looking for industrial-scale quantities? Get specialized pricing for large volume orders.</p>
+                <p className="text-blue-100 max-w-lg mx-auto text-center">Looking for industrial-scale quantities? Get specialized pricing for large volume orders.</p>
               </div>
               <button 
                 onClick={() => {
                   const formElement = document.getElementById('enquiry-form-section');
                   if (formElement) formElement.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-white text-industrial-blue px-6 py-3 rounded font-medium hover:bg-gray-100 transition-colors shrink-0 whitespace-nowrap"
+                className="bg-white text-industrial-blue px-6 py-3 rounded font-medium hover:bg-gray-100 transition-colors shrink-0 whitespace-nowrap mx-auto"
               >
                 Start Quote Request
               </button>
@@ -94,7 +94,7 @@ export default function ContactPage() {
 
             {/* General Enquiry Form */}
             <div id="enquiry-form-section" className="bg-white border border-border-subtle rounded p-8">
-              <h3 className="font-headline-lg mb-6 border-b border-border-subtle pb-4">General Enquiry</h3>
+              <h3 className="font-headline-lg mb-6 border-b border-border-subtle pb-4 text-center">General Enquiry</h3>
               
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -157,18 +157,20 @@ export default function ContactPage() {
                   ></textarea>
                 </div>
 
-                <button 
-                  type="submit"
-                  disabled={submitting}
-                  className="bg-primary text-on-primary px-8 py-3 rounded font-medium hover:bg-industrial-blue transition-colors disabled:opacity-70 flex items-center justify-center gap-2 w-full md:w-auto"
-                >
-                  {submitting ? 'Sending...' : (
-                    <>
-                      Send Message
-                      <span className="material-symbols-outlined text-sm">send</span>
-                    </>
-                  )}
-                </button>
+                <div className="flex justify-center">
+                  <button 
+                    type="submit"
+                    disabled={submitting}
+                    className="bg-primary text-on-primary px-8 py-3 rounded font-medium hover:bg-industrial-blue transition-colors disabled:opacity-70 flex items-center justify-center gap-2 mx-auto"
+                  >
+                    {submitting ? 'Sending...' : (
+                      <>
+                        Send Message
+                        <span className="material-symbols-outlined text-sm">send</span>
+                      </>
+                    )}
+                  </button>
+                </div>
               </form>
             </div>
           </div>
@@ -177,7 +179,7 @@ export default function ContactPage() {
           <div className="col-span-12 lg:col-span-5 space-y-8">
             {/* HQ Card */}
             <div className="bg-surface-gray border border-border-subtle rounded p-8">
-              <h3 className="font-headline-lg mb-6 pb-4 border-b border-border-subtle">Headquarters</h3>
+              <h3 className="font-headline-lg mb-6 pb-4 border-b border-border-subtle text-center">Headquarters</h3>
               
               <div className="space-y-6">
                 <div className="flex gap-4">

@@ -28,14 +28,14 @@ export default function IndustriesPage() {
       `}} />
       
       {/* Hero Section */}
-      <section className="relative bg-slate-dark text-white pt-32 pb-24 md:pt-40 md:pb-32 px-margin-page overflow-hidden">
+      <section className="relative bg-slate-dark text-white pt-32 pb-24 md:pt-40 md:pb-32 px-margin-page overflow-hidden text-center flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-dark to-transparent"></div>
         
-        <div className="max-w-container-max mx-auto relative z-10">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-in-up tracking-tighter">
+        <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
+          <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-in-up tracking-tighter text-center">
             Sectors We<br/><span className="text-slate-400">Engineer For.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-400 max-w-3xl animate-fade-in-up font-light leading-relaxed" style={{ animationDelay: '0.2s' }}>
+          <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto animate-fade-in-up font-light leading-relaxed text-center" style={{ animationDelay: '0.2s' }}>
             Delivering specialized chemical architectures and raw materials designed for high-performance industrial applications.
           </p>
         </div>
@@ -64,19 +64,19 @@ export default function IndustriesPage() {
       <section className="bg-slate-dark py-32 px-margin-page border-y border-slate-900">
         <div className="max-w-container-max mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
-            <div className="text-center lg:text-left">
+            <div className="text-center flex flex-col items-center justify-center">
               <div className="text-7xl font-bold text-white mb-4 tracking-tighter">27+</div>
               <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Years of Excellence</div>
             </div>
-            <div className="text-center lg:text-left">
+            <div className="text-center flex flex-col items-center justify-center">
               <div className="text-7xl font-bold text-white mb-4 tracking-tighter">100+</div>
               <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Engineered Products</div>
             </div>
-            <div className="text-center lg:text-left">
+            <div className="text-center flex flex-col items-center justify-center">
               <div className="text-7xl font-bold text-white mb-4 tracking-tighter">7</div>
               <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Core Industries</div>
             </div>
-            <div className="text-center lg:text-left">
+            <div className="text-center flex flex-col items-center justify-center">
               <div className="text-7xl font-bold text-white mb-4 tracking-tighter">100%</div>
               <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Pan-India Reach</div>
             </div>
