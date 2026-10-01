@@ -26,12 +26,12 @@ export default function Footer() {
     <footer className="bg-slate-900 text-white mt-auto">
       {/* Top CTA Band */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800">
-        <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-2xl font-bold text-white">Ready to source chemicals?</h3>
-            <p className="text-blue-100 mt-1">Get competitive quotes from India's trusted distributor.</p>
+        <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-10 flex flex-col items-center justify-center text-center gap-6">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-white text-center">Ready to source chemicals?</h3>
+            <p className="text-blue-100 mt-1 text-center">Get competitive quotes from India's trusted distributor.</p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex justify-center gap-3">
             <Link href="/contact" className="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
               Request a Quote
             </Link>
@@ -157,9 +157,9 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-slate-800">
-        <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-6 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Paras Chem India. All rights reserved.</p>
-          <p className="text-slate-600 text-xs">Est. 1999 · 27+ Years of Excellence · ISO 9001:2015 Certified</p>
+        <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-6 flex flex-col justify-center items-center text-center gap-2">
+          <p className="text-slate-500 text-sm text-center">© {new Date().getFullYear()} Paras Chem India. All rights reserved.</p>
+          <p className="text-slate-600 text-xs text-center">Est. 1999 · 27+ Years of Excellence · ISO 9001:2015 Certified</p>
         </div>
       </div>
     </footer>
