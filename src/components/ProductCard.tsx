@@ -18,26 +18,26 @@ export default function ProductCard({ product }: { product: Product }) {
     <div
       className={`group bg-white rounded-xl border border-border-subtle border-l-4 ${borderColorClass} shadow-sm hover:shadow-md hover:border-r-border-subtle hover:border-y-border-subtle transition-all duration-300 flex flex-col h-full`}
     >
-      <div className="p-6 flex-1 flex flex-col">
+      <div className="p-6 flex-1 flex flex-col items-center text-center">
         <div className="mb-4">
-          <span className="inline-block px-3 py-1 bg-surface-gray text-on-surface-variant text-label-sm font-label-sm font-medium rounded-full border border-border-subtle">
+          <span className="inline-block px-3 py-1 bg-surface-gray text-on-surface-variant text-label-sm font-label-sm font-medium rounded-full border border-border-subtle mx-auto">
             {product.category}
           </span>
         </div>
         
-        <h3 className="font-headline-md text-lg font-bold text-on-surface mb-3 group-hover:text-industrial-blue transition-colors">
+        <h3 className="font-headline-md text-lg font-bold text-on-surface mb-3 group-hover:text-industrial-blue transition-colors text-center">
           {product.name}
         </h3>
 
         <div className="flex-1 mb-6">
-          <p className="text-body-sm text-on-surface-variant line-clamp-2">
+          <p className="text-body-sm text-on-surface-variant line-clamp-2 text-center">
             {product.description}
           </p>
         </div>
 
         <Link
           href={`/products/${product.slug}`}
-          className="inline-flex items-center gap-1 font-label-md text-industrial-blue hover:text-blue-800 transition-colors mt-auto font-medium"
+          className="inline-flex items-center justify-center gap-1 font-label-md text-industrial-blue hover:text-blue-800 transition-colors mt-auto font-medium mx-auto"
         >
           View Details
           <span className="material-symbols-outlined text-[18px]">arrow_forward</span>

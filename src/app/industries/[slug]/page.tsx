@@ -52,17 +52,17 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
             <h2 className="font-headline-lg text-center mb-12">Core Applications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
               {industry.applications.map((app, i) => (
-                <div key={i} className="bg-white border border-border-subtle rounded-lg p-8 hover:shadow-sm transition-shadow">
-                  <div className="flex items-center gap-4 mb-4">
+                <div key={i} className="bg-white border border-border-subtle rounded-lg p-8 hover:shadow-sm transition-shadow flex flex-col items-center text-center">
+                  <div className="flex items-center justify-center gap-4 mb-4">
                     <span className="material-symbols-outlined text-industrial-blue text-3xl">{app.icon || 'science'}</span>
-                    <h3 className="font-headline-md">{app.title}</h3>
+                    <h3 className="font-headline-md text-center">{app.title}</h3>
                   </div>
-                  <p className="text-body-md text-on-surface-variant mb-6">{app.description}</p>
+                  <p className="text-body-md text-on-surface-variant mb-6 text-center">{app.description}</p>
                   
                   {app.chemicals && app.chemicals.length > 0 && (
-                    <div>
-                      <span className="text-label-sm uppercase text-on-surface-variant block mb-3 font-medium">Key Chemicals</span>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="w-full">
+                      <span className="text-label-sm uppercase text-on-surface-variant block mb-3 font-medium text-center">Key Chemicals</span>
+                      <div className="flex flex-wrap justify-center gap-2">
                         {app.chemicals.map((chem, j) => (
                           <span key={j} className="bg-surface px-3 py-1 rounded text-body-sm border border-border-subtle">
                             {chem}
@@ -81,8 +81,8 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       {/* Featured Chemicals Table */}
       {industry.chemicals && industry.chemicals.length > 0 && (
         <section className="py-16 px-margin-page">
-          <div className="max-w-container-max mx-auto">
-            <h2 className="font-headline-lg mb-8">Featured Chemical Products</h2>
+          <div className="max-w-container-max mx-auto text-center">
+            <h2 className="font-headline-lg mb-8 text-center">Featured Chemical Products</h2>
             <div className="overflow-x-auto rounded border border-border-subtle">
               <table className="w-full text-left border-collapse">
                 <thead>
