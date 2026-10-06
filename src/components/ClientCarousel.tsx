@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function ClientCarousel() {
   const clients = [
     { name: "Aarti Industries", domain: "aarti-industries.com" },
@@ -37,9 +39,11 @@ export default function ClientCarousel() {
         <div className="animate-marquee whitespace-nowrap flex items-center">
           {clients.map((client, index) => (
             <div key={index} className="mx-8 w-32 flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100 h-16">
-              <img 
+              <Image 
                 src={`/clients/${slugify(client.name)}.png`} 
                 alt={client.name} 
+                width={128}
+                height={48}
                 className="max-h-12 max-w-full object-contain"
               />
             </div>
@@ -48,9 +52,11 @@ export default function ClientCarousel() {
         <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center">
           {clients.map((client, index) => (
             <div key={`clone-${index}`} className="mx-8 w-32 flex-shrink-0 flex items-center justify-center grayscale hover:grayscale-0 transition-all opacity-70 hover:opacity-100 h-16">
-              <img 
+              <Image 
                 src={`/clients/${slugify(client.name)}.png`} 
                 alt={client.name} 
+                width={128}
+                height={48}
                 className="max-h-12 max-w-full object-contain"
               />
             </div>

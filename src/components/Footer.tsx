@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Footer() {
@@ -29,7 +30,7 @@ export default function Footer() {
         <div className="max-w-container-max mx-auto px-4 md:px-margin-page py-10 flex flex-col items-center justify-center text-center gap-6">
           <div className="text-center">
             <h3 className="text-2xl font-bold text-white text-center">Ready to source chemicals?</h3>
-            <p className="text-blue-100 mt-1 text-center">Get competitive quotes from India's trusted distributor.</p>
+            <p className="text-blue-100 mt-1 text-center">Get competitive quotes from India&apos;s trusted distributor.</p>
           </div>
           <div className="flex justify-center gap-3">
             <Link href="/contact" className="bg-white text-blue-700 px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-colors">
@@ -48,10 +49,10 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/">
-              <img src="/logo.jpg" alt="Paras Chem India" className="h-20 w-auto object-contain brightness-0 invert mb-4" />
+              <Image src="/logo.jpg" alt="Paras Chem India" width={160} height={80} className="h-20 w-auto object-contain brightness-0 invert mb-4" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              One of India's leading chemical distributors, supplying high-quality chemicals across 7+ industries for over 27 years.
+              One of India&apos;s leading chemical distributors, supplying high-quality chemicals across 7+ industries for over 27 years.
             </p>
             <div className="flex gap-3">
               <a href="mailto:kanadiadhruv3883@gmail.com" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Email">

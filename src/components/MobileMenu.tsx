@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 interface MobileMenuProps {
@@ -34,7 +35,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       <div className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-surface-container-lowest z-[101] menu-panel flex flex-col">
         <div className="flex justify-between items-center p-6 border-b border-border-subtle">
           <Link href="/" className="flex items-center gap-2" onClick={onClose}>
-            <img src="/logo.jpg" alt="Paras Chem India Logo" className="h-10 object-contain mix-blend-multiply" />
+            <Image src="/logo.jpg" alt="Paras Chem India Logo" width={160} height={40} className="h-10 w-auto object-contain mix-blend-multiply" />
           </Link>
           <button onClick={onClose} aria-label="Close menu" className="text-on-surface">
             <span className="material-symbols-outlined">close</span>

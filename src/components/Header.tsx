@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
 import MobileMenu from './MobileMenu';
@@ -33,7 +34,7 @@ export default function Header() {
           {/* LEFT side */}
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2">
-              <img src="/logo.jpg" alt="Paras Chem India Logo" className="h-24 w-auto object-contain mix-blend-multiply" />
+              <Image src="/logo.jpg" alt="Paras Chem India Logo" width={200} height={96} className="h-24 w-auto object-contain mix-blend-multiply" />
             </Link>
             
             <nav className="hidden md:flex gap-6">

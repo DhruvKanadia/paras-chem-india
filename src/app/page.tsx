@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function HomePage() {
   return (
@@ -49,10 +50,12 @@ export default function HomePage() {
       <section className="relative -mt-16 z-20 px-6 md:px-12 mb-12 md:mb-16">
         <div className="max-w-7xl mx-auto">
           <div className="relative h-[400px] md:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            <img
+            <Image
               src="/industrial-plant.jpg"
               alt="Industrial Chemical Plant"
-              className="absolute inset-0 w-full h-full object-cover"
+              fill
+              className="object-cover"
+              priority
             />
             {/* Elegant gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-dark/90 via-slate-dark/40 to-transparent"></div>

@@ -15,7 +15,7 @@ export default function ServicesPage() {
             End-to-End <br /> Distribution.
           </h1>
           <p className="text-xl md:text-2xl text-slate-500 max-w-2xl mx-auto leading-relaxed tracking-tight text-center">
-            We don't just move chemicals. We engineer the entire supply chain—from global procurement and strict quality assurance to seamless pan-India logistics. 
+            We don&apos;t just move chemicals. We engineer the entire supply chain—from global procurement and strict quality assurance to seamless pan-India logistics. 
           </p>
         </div>
       </section>

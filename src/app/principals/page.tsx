@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { principals, bridgeSteps, qualityPillars } from '@/data/principals'
 
 export const metadata: Metadata = {
@@ -53,9 +54,11 @@ export default function PrincipalsPage() {
                 className="mx-8 md:mx-14 flex-shrink-0 flex flex-col items-center justify-center text-center group cursor-default"
               >
                 <div className="h-24 w-48 md:w-56 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
-                  <img
+                  <Image
                     src={principal.logo}
                     alt={`${principal.name} Logo`}
+                    width={224}
+                    height={96}
                     className="max-h-full max-w-full object-contain mix-blend-multiply"
                   />
                 </div>
