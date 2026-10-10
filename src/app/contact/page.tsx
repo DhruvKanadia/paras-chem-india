@@ -219,7 +219,7 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-label-md mb-1">Email</h4>
                     <p className="text-body-md text-on-surface-variant">
-                      <a href="mailto:kanadiadhruv3883@gmail.com" className="hover:text-industrial-blue">kanadiadhruv3883@gmail.com</a>
+                      <a href="mailto:info@paraschemindia.com" className="hover:text-industrial-blue">info@paraschemindia.com</a>
                     </p>
                   </div>
                 </div>

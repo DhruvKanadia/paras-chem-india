@@ -33,7 +33,7 @@ export default function WhatsAppButton() {
 
       {/* Email Floating Button */}
       <a
-        href="mailto:kanadiadhruv3883@gmail.com?subject=Product%20Enquiry%20-%20Paras%20Chem%20India&body=Hello%2C%0A%0AI%20am%20interested%20in%20your%20chemical%20products.%20Please%20share%20details.%0A%0ARegards"
+        href="mailto:info@paraschemindia.com?subject=Product%20Enquiry%20-%20Paras%20Chem%20India&body=Hello%2C%0A%0AI%20am%20interested%20in%20your%20chemical%20products.%20Please%20share%20details.%0A%0ARegards"
         className="fixed bottom-24 right-6 z-50 bg-industrial-blue hover:bg-blue-700 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group"
         aria-label="Send Email"
       >

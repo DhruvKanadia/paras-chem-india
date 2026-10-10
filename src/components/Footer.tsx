@@ -55,7 +55,7 @@ export default function Footer() {
               One of India&apos;s leading chemical distributors, supplying high-quality chemicals across 7+ industries for over 27 years.
             </p>
             <div className="flex gap-3">
-              <a href="mailto:kanadiadhruv3883@gmail.com" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Email">
+              <a href="mailto:info@paraschemindia.com" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Email">
                 <span className="material-symbols-outlined text-lg">mail</span>
               </a>
               <a href="https://wa.me/919326772266" target="_blank" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-green-600 transition-colors" title="WhatsApp">
@@ -111,7 +111,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-blue-400">mail</span>
-                <a href="mailto:kanadiadhruv3883@gmail.com" className="text-slate-400 hover:text-white transition-colors text-sm">kanadiadhruv3883@gmail.com</a>
+                <a href="mailto:info@paraschemindia.com" className="text-slate-400 hover:text-white transition-colors text-sm">info@paraschemindia.com</a>
               </div>
               <div className="mt-4 pt-4 border-t border-slate-800">
                 <p className="text-xs text-slate-500">GSTIN: 27ACVPK1617L1Z4</p>
