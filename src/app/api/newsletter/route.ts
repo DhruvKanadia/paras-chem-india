@@ -26,8 +26,8 @@ export async function POST(request: Request) {
     });
 
     const mailOptions = {
-      from: process.env.SMTP_USER || 'noreply@paraschemindia.com',
-      to: 'kanadiadhruv3883@gmail.com',
+      from: process.env.SMTP_USER || 'info@paraschemindia.com',
+      to: 'info@paraschemindia.com',
       subject: `New Newsletter Subscription`,
       text: `A new user has subscribed to the newsletter: ${email}`,
       html: `

@@ -12,9 +12,15 @@ export default function ProductEnquiryForm({ productName, productSlug }: Product
     quantity: '',
     company: '',
     email: '',
+    website: '',
+    _time: 0,
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  React.useEffect(() => {
+    setFormData(prev => ({ ...prev, _time: Date.now() }));
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +35,7 @@ export default function ProductEnquiryForm({ productName, productSlug }: Product
       
       if (res.ok) {
         setSubmitted(true);
-        setFormData({ quantity: '', company: '', email: '' });
+        setFormData({ quantity: '', company: '', email: '', website: '', _time: Date.now() });
       } else {
         alert('Failed to submit enquiry. Please try again later.');
       }
@@ -59,6 +65,20 @@ export default function ProductEnquiryForm({ productName, productSlug }: Product
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Honeypot field for bot protection */}
+      <div style={{ display: 'none', position: 'absolute', left: '-9999px' }} aria-hidden="true">
+        <label htmlFor="prod-website">Website</label>
+        <input 
+          type="text" 
+          id="prod-website" 
+          name="website" 
+          tabIndex={-1} 
+          autoComplete="off" 
+          value={formData.website} 
+          onChange={(e) => setFormData({...formData, website: e.target.value})} 
+        />
+      </div>
+
       <div>
         <label htmlFor="quantity" className="block font-label-md text-on-surface mb-1">Required Quantity</label>
         <input 

@@ -10,8 +10,15 @@ export default function ContactPage() {
     company: '',
     email: '',
     phone: '',
-    message: ''
+    message: '',
+    website: '', // Honeypot field for spam bots
+    _time: 0,
   });
+
+  // Set form load timestamp on mount
+  React.useEffect(() => {
+    setFormData(prev => ({ ...prev, _time: Date.now() }));
+  }, []);
   const [submitting, setSubmitting] = useState(false);
   const [toastConfig, setToastConfig] = useState<{ message: string; type: 'success' | 'error'; isVisible: boolean }>({
     message: '',
@@ -38,7 +45,7 @@ export default function ContactPage() {
       
       if (res.ok) {
         showToast(data.message || 'Enquiry submitted successfully. We will be in touch soon!', 'success');
-        setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+        setFormData({ name: '', company: '', email: '', phone: '', message: '', website: '', _time: Date.now() });
       } else {
         showToast(data.error || 'Failed to submit enquiry. Please try again.', 'error');
       }
@@ -97,6 +104,20 @@ export default function ContactPage() {
               <h3 className="font-headline-lg mb-6 border-b border-border-subtle pb-4 text-center">General Enquiry</h3>
               
               <form onSubmit={handleSubmit} className="space-y-5">
+                {/* Anti-spam honeypot field - invisible to real humans */}
+                <div style={{ display: 'none', position: 'absolute', left: '-9999px' }} aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input 
+                    type="text" 
+                    id="website" 
+                    name="website" 
+                    tabIndex={-1} 
+                    autoComplete="off" 
+                    value={formData.website} 
+                    onChange={(e) => setFormData({...formData, website: e.target.value})} 
+                  />
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="name" className="block font-label-md text-on-surface mb-1">Full Name *</label>
@@ -188,12 +209,21 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h4 className="font-label-md mb-1">Address</h4>
-                    <p className="text-body-md text-on-surface-variant">
+                    <a 
+                      href="https://www.google.com/maps/search/?api=1&query=Gala+Industrial+Complex,+Dindayal+Upadhyay+Marg,+Mulund+West,+Mumbai,+Maharashtra+400080" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-body-md text-on-surface-variant hover:text-industrial-blue transition-colors group block"
+                    >
                       313, Ind.Est, Gala Industrial Complex,<br />
                       Dindayal Upadhyay Marg,<br />
                       Siddharth Nagar, Mulund West,<br />
                       Mumbai, Maharashtra 400080
-                    </p>
+                      <span className="inline-flex items-center gap-1 text-xs text-industrial-blue font-medium mt-1 group-hover:underline">
+                        <span>Get directions</span>
+                        <span className="material-symbols-outlined text-xs">open_in_new</span>
+                      </span>
+                    </a>
                   </div>
                 </div>
 
@@ -219,7 +249,14 @@ export default function ContactPage() {
                   <div>
                     <h4 className="font-label-md mb-1">Email</h4>
                     <p className="text-body-md text-on-surface-variant">
-                      <a href="mailto:info@paraschemindia.com" className="hover:text-industrial-blue">info@paraschemindia.com</a>
+                      <a 
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=info@paraschemindia.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:text-industrial-blue transition-colors"
+                      >
+                        info@paraschemindia.com
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -251,14 +288,36 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Map */}
-            <div className="h-64 bg-surface-gray border border-border-subtle rounded overflow-hidden relative">
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBz_SAljOgJs3yyqblhzx8Cd6em-AWCzxOauMDchaY6Cac6OplxMo7sdn3wGgf-gJMwvTSRRfrHJ0QX2J8-_S-4ZnaZEJhoNag5PW9pIpqpEhyNP0GSljShOobZmgCOWgp7obT78XkAVbNVm-vQJ0F953jTk0dEJ2IvvfIoEBeVtTt9oRLkNAdLTHtmqb2ozC4qmMB0ucQu9S1ixUMvCeGBxTNOuBY-H_7NhVnTRyYU5s2xeLko-JMi" 
-                alt="Map location" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
+            {/* Interactive Map */}
+            <div className="bg-white border border-border-subtle rounded-lg overflow-hidden shadow-sm">
+              <div className="p-4 bg-surface-gray border-b border-border-subtle flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-industrial-blue text-sm">pin_drop</span>
+                  <span className="font-label-md text-xs font-semibold uppercase tracking-wider text-on-surface">Mulund West Facility</span>
+                </div>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Gala+Industrial+Complex,+Dindayal+Upadhyay+Marg,+Mulund+West,+Mumbai,+Maharashtra+400080" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-1 text-xs font-medium text-industrial-blue hover:text-blue-700 transition-colors"
+                >
+                  <span>Open in Google Maps</span>
+                  <span className="material-symbols-outlined text-xs">open_in_new</span>
+                </a>
+              </div>
+              <div className="h-64 w-full relative">
+                <iframe
+                  title="Paras Chem India Location Map"
+                  src="https://maps.google.com/maps?q=Gala+Industrial+Complex,+Dindayal+Upadhyay+Marg,+Mulund+West,+Mumbai+400080&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </div>
 

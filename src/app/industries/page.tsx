@@ -53,6 +53,7 @@ export default function IndustriesPage() {
                   icon={industry.icon}
                   description={industry.description}
                   chemicalCount={industry.chemicals.length}
+                  image={industry.image}
                 />
               </div>
             ))}
