@@ -49,7 +49,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/">
-              <Image src="/logo.jpg" alt="Paras Chem India" width={160} height={80} className="h-20 w-auto object-contain brightness-0 invert mb-4" />
+              <Image src="/logo.jpg" alt="Paras Chem India" width={160} height={80} className="h-20 w-auto object-contain mb-4 rounded-lg" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               One of India&apos;s leading chemical distributors, supplying high-quality chemicals across 7+ industries for over 27 years.

@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 // In-memory rate limiter: IP -> array of submission timestamps
 const rateLimitMap = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
-const MAX_REQUESTS_PER_WINDOW = 5;
+const MAX_REQUESTS_PER_WINDOW = 3;
 
 function checkRateLimit(ip: string): boolean {
   const now = Date.now();
@@ -26,6 +26,19 @@ function isBotGibberish(text: string): boolean {
     if (/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]{5,}/.test(clean)) return true;
   }
   return false;
+}
+
+// Disposable email domain blocklist
+const DISPOSABLE_DOMAINS = [
+  'mailinator.com', 'guerrillamail.com', 'tempmail.com', 'throwaway.email',
+  'yopmail.com', 'fakeinbox.com', 'sharklasers.com', 'guerrillamailblock.com',
+  'grr.la', 'dispostable.com', 'maildrop.cc', '10minutemail.com',
+  'trashmail.com', 'mailnesia.com', 'temp-mail.org', 'getnada.com'
+];
+
+function isDisposableEmail(email: string): boolean {
+  const domain = email.split('@')[1]?.toLowerCase();
+  return DISPOSABLE_DOMAINS.some(d => domain === d || domain?.endsWith('.' + d));
 }
 
 function escapeHtml(str: string): string {
@@ -76,6 +89,15 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { success: false, error: 'Please enter a valid email address.' },
         { status: 400 }
+      );
+    }
+
+    // 3b. Block disposable email addresses
+    if (isDisposableEmail(email)) {
+      console.warn(`Disposable email blocked in enquiry form: ${email}`);
+      return NextResponse.json(
+        { success: true, message: 'Product enquiry submitted successfully.' },
+        { status: 200 }
       );
     }
 

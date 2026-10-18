@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function IndustriesPage() {
   return (
-    <div className="w-full bg-slate-50 min-h-screen">
+    <div className="w-full bg-white min-h-screen">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes fadeInUp {
           from {
@@ -28,71 +28,70 @@ export default function IndustriesPage() {
       `}} />
       
       {/* Hero Section */}
-      <section className="relative bg-slate-dark text-white pt-32 pb-24 md:pt-40 md:pb-32 px-margin-page overflow-hidden text-center flex flex-col items-center justify-center">
+      <section className="relative bg-slate-dark text-white pt-8 pb-8 md:pt-12 md:pb-10 px-6 md:px-margin-page overflow-hidden text-center flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-t from-slate-dark to-transparent"></div>
         
-        <div className="max-w-4xl mx-auto relative z-10 text-center flex flex-col items-center">
-          <h1 className="text-6xl md:text-8xl font-bold mb-8 animate-fade-in-up tracking-tighter text-center">
-            Sectors We<br/><span className="text-slate-400">Engineer For.</span>
+        <div className="max-w-3xl mx-auto relative z-10 text-center flex flex-col items-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-2.5 animate-fade-in-up tracking-tight text-center">
+            Sectors We <span className="text-slate-400">Engineer For.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto animate-fade-in-up font-light leading-relaxed text-center" style={{ animationDelay: '0.2s' }}>
+          <p className="text-sm md:text-base text-slate-300 max-w-2xl mx-auto animate-fade-in-up font-light leading-relaxed text-center" style={{ animationDelay: '0.1s' }}>
             Delivering specialized chemical architectures and raw materials designed for high-performance industrial applications.
           </p>
         </div>
       </section>
 
       {/* Industries Grid */}
-      <section className="py-24 md:py-32 px-margin-page bg-slate-50 relative -mt-10 rounded-t-[3rem] z-20">
+      <section className="pt-10 pb-20 md:pt-14 md:pb-28 px-6 md:px-margin-page bg-white relative z-20">
         <div className="max-w-container-max mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, i) => (
-              <div key={industry.slug} className="animate-fade-in-up" style={{ animationDelay: `${0.3 + i * 0.1}s` }}>
-                <IndustryCard
-                  slug={industry.slug}
-                  name={industry.name}
-                  icon={industry.icon}
-                  description={industry.description}
-                  chemicalCount={industry.chemicals.length}
-                  image={industry.image}
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+            {industries
+              .filter((industry) => industry.slug !== 'other-items')
+              .map((industry, i) => (
+                <div key={industry.slug} className="animate-fade-in-up" style={{ animationDelay: `${0.1 + i * 0.05}s` }}>
+                  <IndustryCard
+                    name={industry.name}
+                    description={industry.description}
+                    image={industry.image}
+                  />
+                </div>
+              ))}
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="bg-slate-dark py-32 px-margin-page border-y border-slate-900">
+      <section className="bg-slate-dark py-20 md:py-28 px-margin-page border-y border-slate-900">
         <div className="max-w-container-max mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             <div className="text-center flex flex-col items-center justify-center">
-              <div className="text-7xl font-bold text-white mb-4 tracking-tighter">27+</div>
-              <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Years of Excellence</div>
+              <div className="text-6xl md:text-7xl font-bold text-white mb-3 tracking-tighter">27+</div>
+              <div className="text-slate-400 text-sm md:text-base uppercase tracking-widest font-semibold">Years of Excellence</div>
             </div>
             <div className="text-center flex flex-col items-center justify-center">
-              <div className="text-7xl font-bold text-white mb-4 tracking-tighter">100+</div>
-              <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Engineered Products</div>
+              <div className="text-6xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100+</div>
+              <div className="text-slate-400 text-sm md:text-base uppercase tracking-widest font-semibold">Engineered Products</div>
             </div>
             <div className="text-center flex flex-col items-center justify-center">
-              <div className="text-7xl font-bold text-white mb-4 tracking-tighter">7</div>
-              <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Core Industries</div>
+              <div className="text-6xl md:text-7xl font-bold text-white mb-3 tracking-tighter">6</div>
+              <div className="text-slate-400 text-sm md:text-base uppercase tracking-widest font-semibold">Core Industries</div>
             </div>
             <div className="text-center flex flex-col items-center justify-center">
-              <div className="text-7xl font-bold text-white mb-4 tracking-tighter">100%</div>
-              <div className="text-slate-400 text-lg uppercase tracking-widest font-semibold">Pan-India Reach</div>
+              <div className="text-6xl md:text-7xl font-bold text-white mb-3 tracking-tighter">100%</div>
+              <div className="text-slate-400 text-sm md:text-base uppercase tracking-widest font-semibold">Pan-India Reach</div>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-slate-100 py-32 px-margin-page text-center">
+      <section className="bg-slate-50 border-t border-slate-100 py-24 md:py-28 px-margin-page text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-slate-900 tracking-tighter">Require Custom Formulation?</h2>
-          <p className="text-xl text-slate-500 mb-12 leading-relaxed max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 tracking-tighter">Require Custom Formulation?</h2>
+          <p className="text-lg md:text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
             Our R&D division engineers bespoke chemical solutions precisely tuned to your manufacturing parameters.
           </p>
-          <Link href="/contact" className="inline-flex items-center justify-center bg-slate-900 text-white px-10 py-5 rounded-full font-semibold text-lg hover:bg-slate-800 hover:-translate-y-1 transition-all duration-300 shadow-xl">
+          <Link href="/contact" className="inline-flex items-center justify-center bg-slate-900 text-white px-9 py-4 rounded-full font-semibold text-base hover:bg-slate-800 hover:-translate-y-0.5 transition-all duration-300 shadow-md">
             Consult Our Experts
           </Link>
         </div>

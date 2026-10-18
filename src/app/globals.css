@@ -127,3 +127,12 @@ html {
 .menu-panel {
   animation: slide-in-right 0.3s ease-out;
 }
+
+/* Hide scrollbar for category pills */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

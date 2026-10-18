@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import IndiaMap from '@/components/IndiaMap'
 
 export const metadata: Metadata = {
   title: 'About Us | Paras Chem',
@@ -40,18 +41,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Key Stats Grid */}
-      <section className="border-b border-slate-200">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-200 border-x border-slate-200">
+      {/* Key Stats Grid - Borderless Typography */}
+      <section className="py-12 md:py-16 px-4 md:px-12 border-b border-slate-100 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: '27+', label: 'Years of Excellence' },
               { value: '₹97 Cr', label: 'FY 25-26 Revenue' },
               { value: '100+', label: 'Chemical Products' },
               { value: '9', label: 'Principal Partners' }
             ].map((stat, i) => (
-              <div key={i} className="p-8 md:p-12 text-center flex flex-col items-center justify-center">
-                <div className="text-5xl md:text-6xl font-light text-slate-900 mb-2 tracking-tight text-center">{stat.value}</div>
+              <div key={i} className="flex flex-col items-center justify-center py-2">
+                <div className="text-4xl md:text-6xl font-light text-slate-900 mb-2 tracking-tight text-center">{stat.value}</div>
                 <div className="text-slate-500 font-mono text-xs uppercase tracking-widest text-center">{stat.label}</div>
               </div>
             ))}
@@ -59,18 +60,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-24 px-4 md:px-12 border-b border-slate-200 bg-slate-50">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 text-center">
+      {/* Mission & Vision - Blended Background */}
+      <section className="py-20 md:py-24 px-4 md:px-12 border-b border-slate-100 bg-white">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 text-center">
           <div className="flex flex-col items-center">
-            <h3 className="text-slate-900 text-2xl font-medium tracking-tight mb-4">Mission</h3>
-            <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed max-w-md mx-auto">
+            <span className="text-xs font-mono uppercase tracking-widest text-industrial-blue font-semibold mb-3">Core Purpose</span>
+            <h3 className="text-slate-900 text-2xl md:text-3xl font-medium tracking-tight mb-4">Mission</h3>
+            <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed max-w-md mx-auto">
               Empowering Indian manufacturing with compliant access to premium chemicals through transparent partnerships and a robust, data-driven distribution network.
             </p>
           </div>
           <div className="flex flex-col items-center">
-            <h3 className="text-slate-900 text-2xl font-medium tracking-tight mb-4">Vision</h3>
-            <p className="text-slate-600 text-lg md:text-xl font-light leading-relaxed max-w-md mx-auto">
+            <span className="text-xs font-mono uppercase tracking-widest text-industrial-blue font-semibold mb-3">Future Outlook</span>
+            <h3 className="text-slate-900 text-2xl md:text-3xl font-medium tracking-tight mb-4">Vision</h3>
+            <p className="text-slate-600 text-base md:text-lg font-light leading-relaxed max-w-md mx-auto">
               Establishing architectural benchmarks for operational excellence, transparency, and quality assurance in chemical distribution across the subcontinent.
             </p>
           </div>
@@ -78,7 +81,7 @@ export default function AboutPage() {
       </section>
 
       {/* Revenue Growth Chart */}
-      <section className="py-24 px-4 md:px-12 border-b border-slate-200 bg-white">
+      <section className="py-20 md:py-24 px-4 md:px-12 border-b border-slate-100 bg-white">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-slate-900 mb-3">Growth Trajectory</h2>
@@ -232,110 +235,121 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Key Growth Metrics Callout */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-8 border-t border-slate-100 max-w-4xl mx-auto text-center">
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-              <div className="text-3xl font-bold text-slate-900 tracking-tight">2.55×</div>
-              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-1">4-Year Expansion</div>
+          {/* Key Growth Metrics Callout - Borderless & Blended */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 pt-10 border-t border-slate-100 max-w-4xl mx-auto text-center">
+            <div className="py-2">
+              <div className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">2.55×</div>
+              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-1.5">4-Year Expansion</div>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-              <div className="text-3xl font-bold text-slate-900 tracking-tight">+67.2%</div>
-              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-1">FY 25–26 Surge</div>
+            <div className="py-2">
+              <div className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">+67.2%</div>
+              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-1.5">FY 25–26 Surge</div>
             </div>
-            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100">
-              <div className="text-3xl font-bold text-slate-900 tracking-tight">₹97 Cr</div>
-              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-1">Annual Revenue</div>
+            <div className="py-2">
+              <div className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">₹97 Cr</div>
+              <div className="text-xs font-mono text-slate-500 uppercase tracking-widest mt-1.5">Annual Revenue</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Pan-India Presence Map */}
-      <section className="py-24 px-4 md:px-12 border-b border-slate-200 bg-slate-50">
+      {/* Pan-India Presence & Network Topology - Blended Background (No Cards) */}
+      <section className="py-20 md:py-24 px-4 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-slate-900 mb-4">Network Topology</h2>
-            <div className="flex justify-center items-center gap-8 font-mono text-xs uppercase tracking-widest text-slate-500">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-slate-900"></span> Active Nodes
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-slate-400"></span> Planned Nodes
-              </div>
-            </div>
+            <span className="text-xs font-mono uppercase tracking-widest text-industrial-blue font-semibold mb-2 block">
+              Pan-India Distribution Hubs
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-3">Network Topology</h2>
+            <p className="text-slate-500 text-base md:text-lg font-light max-w-2xl mx-auto leading-relaxed">
+              Strategic warehousing and centralized routing infrastructure connecting India&apos;s key industrial manufacturing corridors.
+            </p>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center justify-center gap-16 md:gap-24">
-            <div className="flex-1 w-full max-w-xl">
-              <div className="space-y-8">
-                <div className="grid grid-cols-[120px_1fr] gap-4 items-baseline">
-                  <div className="font-mono text-sm text-slate-900">Mumbai (HQ)</div>
-                  <div className="text-slate-500 text-sm md:text-base font-light border-b border-slate-200 border-dashed pb-2">Corporate operations and centralized routing</div>
-                </div>
-                <div className="grid grid-cols-[120px_1fr] gap-4 items-baseline">
-                  <div className="font-mono text-sm text-slate-900">Bhiwandi</div>
-                  <div className="text-slate-500 text-sm md:text-base font-light border-b border-slate-200 border-dashed pb-2">Primary warehousing hub (5 dedicated structural facilities)</div>
-                </div>
-                <div className="grid grid-cols-[120px_1fr] gap-4 items-baseline">
-                  <div className="font-mono text-sm text-slate-400">Expansion</div>
-                  <div className="text-slate-500 text-sm md:text-base font-light border-b border-slate-200 border-dashed pb-2">Vapi, Bangalore, Hyderabad, Kolkata</div>
-                </div>
-              </div>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Clean India Vector Map - Borderless & Blended */}
+            <div className="lg:col-span-7 flex flex-col items-center justify-center p-2 md:p-4">
+              <IndiaMap className="w-full" />
             </div>
 
-            <div className="flex-1 w-full max-w-[500px] flex items-center justify-center">
-              <div className="w-full aspect-square bg-slate-50 rounded-[2rem] p-12 border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-slate-100 rounded-full blur-3xl -mr-16 -mt-16 opacity-50"></div>
-
-                <div className="text-center">
-                  <h3 className="text-slate-900 text-3xl font-medium tracking-tight mb-2">Distribution Nodes</h3>
-                  <p className="text-slate-500 font-light">Real-time hub architecture</p>
-                </div>
-
-                <div className="space-y-6 relative z-10 mt-8">
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-3 h-3 bg-slate-900 shadow-[0_0_15px_rgba(15,23,42,0.5)] rounded-full"></div>
-                    <div>
-                      <div className="font-mono text-sm tracking-widest text-slate-900 group-hover:pl-2 transition-all duration-300">MUMBAI HQ</div>
-                      <div className="text-slate-500 text-xs mt-1">LAT 19.0760 / LON 72.8777</div>
-                    </div>
+            {/* Distribution Nodes Details - Clean Editorial Style (No Cards/Borders) */}
+            <div className="lg:col-span-5 space-y-6">
+              {/* Mumbai HQ */}
+              <div className="py-5 border-b border-slate-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-blue-50 text-industrial-blue flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-2xl">apartment</span>
                   </div>
-
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-3 h-3 bg-slate-900 rounded-full"></div>
-                    <div>
-                      <div className="font-mono text-sm tracking-widest text-slate-900 group-hover:pl-2 transition-all duration-300">BHIWANDI HUB</div>
-                      <div className="text-slate-500 text-xs mt-1">LAT 19.2813 / LON 73.0483</div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="text-lg font-bold text-slate-900">Mumbai HQ</h3>
+                      <span className="text-industrial-blue text-xs font-mono font-semibold uppercase tracking-wider">
+                        Headquarters
+                      </span>
                     </div>
-                  </div>
-
-                  <div className="flex items-center gap-6 group opacity-50">
-                    <div className="w-3 h-3 bg-transparent border-2 border-slate-400 rounded-full"></div>
-                    <div>
-                      <div className="font-mono text-sm tracking-widest text-slate-500 group-hover:pl-2 transition-all duration-300">PLANNED EXPANSION</div>
-                      <div className="text-slate-400 text-xs mt-1">VAPI / BLR / HYD / CCU</div>
+                    <p className="text-sm text-slate-600 mb-1.5">Mulund West, Maharashtra 400080</p>
+                    <p className="text-xs text-slate-500 leading-relaxed mb-2.5">
+                      Corporate headquarters, centralized trading desk, finance and key account logistics coordination.
+                    </p>
+                    <div className="flex items-center gap-3 text-xs font-mono text-slate-400">
+                      <span>LAT 19.0760</span>
+                      <span className="text-slate-300">/</span>
+                      <span>LON 72.8777</span>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Key Clients */}
-      <section className="py-24 px-4 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-slate-900 mb-12 text-center">Institutional Trust</h2>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {['ONGC', 'NTPC', 'BPCL', 'IOCL', 'GAIL', 'BARC', 'Aarti Industries', 'Clean Science', 'Lupin Ltd', 'Godrej', 'Galaxy Surfactants', 'Vedanta Ltd'].map(client => (
-              <span
-                key={client}
-                className="px-6 py-3 rounded-full text-sm font-mono tracking-wide border border-slate-200 text-slate-600 hover:border-slate-900 hover:text-slate-900 hover:bg-slate-50 transition-colors cursor-default"
-              >
-                {client}
-              </span>
-            ))}
+              {/* Bhiwandi Hub */}
+              <div className="py-5 border-b border-slate-100">
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-teal-50 text-chemical-green flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-2xl">warehouse</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="text-lg font-bold text-slate-900">Bhiwandi Hub</h3>
+                      <span className="text-chemical-green text-xs font-mono font-semibold uppercase tracking-wider">
+                        Primary Warehouse
+                      </span>
+                    </div>
+                    <p className="text-sm text-slate-600 mb-1.5">HAZ-Category Chemical Facility</p>
+                    <p className="text-xs text-slate-500 leading-relaxed mb-2.5">
+                      40,000+ sq.ft. certified chemical warehousing, bulk storage tanks, repacking units, and batch testing lab.
+                    </p>
+                    <div className="flex items-center gap-3 text-xs font-mono text-slate-400">
+                      <span>LAT 19.2813</span>
+                      <span className="text-slate-300">/</span>
+                      <span>LON 73.0483</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Planned Expansion */}
+              <div className="py-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 rounded-xl bg-slate-100 text-slate-600 flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-2xl">explore</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-1">
+                      <h3 className="text-lg font-bold text-slate-700">Planned Expansion</h3>
+                      <span className="text-slate-500 text-xs font-mono font-semibold uppercase tracking-wider">
+                        Coming Soon
+                      </span>
+                    </div>
+                    <p className="text-sm font-semibold text-slate-700 mb-1">Vapi · Bangalore · Hyderabad · Kolkata</p>
+                    <p className="text-xs text-slate-500 leading-relaxed mb-2.5">
+                      Active expansion into dedicated regional inventory hubs covering western, southern, and eastern industrial belts.
+                    </p>
+                    <div className="text-xs font-mono text-slate-400">
+                      VAPI / BLR / HYD / CCU
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
