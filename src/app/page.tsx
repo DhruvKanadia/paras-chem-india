@@ -16,36 +16,12 @@ export default function HomePage() {
         }
       `}} />
 
-      {/* Hero Section */}
-      <section className="relative bg-[#0B132B] text-white pt-16 pb-28 md:pt-24 md:pb-36 px-6 md:px-12 overflow-hidden flex flex-col items-center justify-center text-center" style={{ textAlign: 'center' }}>
-        <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-center text-center" style={{ textAlign: 'center' }}>
-          <h1 className="w-full text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-5 animate-fade-in-up text-white" style={{ animationDelay: '0.1s', textAlign: 'center' }}>
-            <span className="block">The Engine</span>
-            <span className="block">of Indian Industry.</span>
-          </h1>
-
-          <p className="w-full max-w-2xl mx-auto text-center text-lg md:text-xl text-slate-200 font-normal leading-relaxed animate-fade-in-up mb-10" style={{ animationDelay: '0.2s', textAlign: 'center' }}>
-            Precision chemical distribution. Over 27 years of operational excellence delivering molecular consistency to pharmaceuticals, plastics, and textiles.
-          </p>
-
-          <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-5 animate-fade-in-up mx-auto" style={{ animationDelay: '0.3s' }}>
-            <Link href="/products" className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-slate-200 hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
-              Explore Portfolio
-            </Link>
-            <Link href="/contact" className="inline-flex items-center justify-center bg-transparent border border-slate-600 text-white px-8 py-3.5 rounded-full font-semibold text-base hover:bg-white/10 transition-all duration-300">
-              Consult Experts
-            </Link>
-          </div>
-
-        </div>
-      </section>
-
-      {/* Industrial Image Section */}
-      <section className="relative -mt-16 md:-mt-20 z-20 px-6 md:px-12 mb-12 md:mb-16">
+      {/* 1. Hero Industrial Banner Section */}
+      <section className="relative pt-6 md:pt-10 pb-8 md:pb-12 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] max-h-[620px] rounded-[2rem] overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.6)] border border-slate-200/30 ring-1 ring-white/10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] max-h-[620px] rounded-[2rem] overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.6)] border border-slate-200/40 ring-1 ring-black/5 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
             <Image
-              src="/industrial-plant.jpg?v=7"
+              src="/industrial-plant.jpg?v=8"
               alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
               fill
               className="object-cover object-bottom"
@@ -67,6 +43,29 @@ export default function HomePage() {
                 Partner With Us <span className="material-symbols-outlined text-base ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. The Engine of Indian Industry Section */}
+      <section className="relative bg-[#0B132B] text-white py-16 md:py-24 px-6 md:px-12 overflow-hidden flex flex-col items-center justify-center text-center">
+        <div className="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-center text-center">
+          <h1 className="w-full text-center text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-5 animate-fade-in-up text-white" style={{ animationDelay: '0.2s' }}>
+            <span className="block">The Engine</span>
+            <span className="block">of Indian Industry.</span>
+          </h1>
+
+          <p className="w-full max-w-2xl mx-auto text-center text-lg md:text-xl text-slate-200 font-normal leading-relaxed animate-fade-in-up mb-10" style={{ animationDelay: '0.3s' }}>
+            Precision chemical distribution. Over 27 years of operational excellence delivering molecular consistency to pharmaceuticals, plastics, and textiles.
+          </p>
+
+          <div className="w-full flex flex-col sm:flex-row items-center justify-center gap-5 animate-fade-in-up mx-auto" style={{ animationDelay: '0.4s' }}>
+            <Link href="/products" className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-slate-200 hover:-translate-y-0.5 transition-all duration-300 shadow-lg">
+              Explore Portfolio
+            </Link>
+            <Link href="/contact" className="inline-flex items-center justify-center bg-transparent border border-slate-600 text-white px-8 py-3.5 rounded-full font-semibold text-base hover:bg-white/10 transition-all duration-300">
+              Consult Experts
+            </Link>
           </div>
         </div>
       </section>
