@@ -21,26 +21,33 @@ export default function Header() {
   return (
     <>
       <header className="bg-surface-container-lowest border-b border-border-subtle sticky top-0 z-50">
-        <div className="max-w-container-max mx-auto px-4 md:px-margin-page h-20 flex justify-between items-center">
+        <div className="max-w-container-max mx-auto px-4 md:px-margin-page h-24 md:h-28 flex justify-between items-center">
           {/* LEFT side */}
           <div className="flex items-center gap-6 lg:gap-8">
             <Link href="/" className="flex items-center">
-              <Image src="/logo.jpg" alt="Paras Chem India Logo" width={200} height={96} className="h-14 lg:h-16 w-auto object-contain mix-blend-multiply" />
+              <Image 
+                src="/logo.jpg" 
+                alt="Paras Chem India Logo" 
+                width={260} 
+                height={260} 
+                className="h-20 lg:h-24 w-auto object-contain mix-blend-multiply py-1" 
+                priority
+              />
             </Link>
             
-            <div className="hidden md:block h-8 w-px bg-slate-200"></div>
+            <div className="hidden md:block h-10 w-px bg-slate-200"></div>
 
-            <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+            <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <Link
                     key={link.name}
                     href={link.href}
-                    className={`text-[15px] lg:text-[16px] font-semibold px-3.5 py-2 rounded-full transition-all duration-200 ${
+                    className={`text-[15px] lg:text-[16px] font-semibold px-4 py-2.5 rounded-none transition-colors duration-150 ${
                       isActive 
-                        ? 'text-industrial-blue bg-blue-50/90 font-bold' 
-                        : 'text-slate-600 hover:text-industrial-blue hover:bg-blue-50/60'
+                        ? 'text-industrial-blue bg-blue-50 font-bold' 
+                        : 'text-slate-700 hover:text-industrial-blue hover:bg-slate-100'
                     }`}
                   >
                     {link.name}
