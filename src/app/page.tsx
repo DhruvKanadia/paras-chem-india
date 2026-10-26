@@ -43,29 +43,27 @@ export default function HomePage() {
       {/* Industrial Image Section */}
       <section className="relative -mt-16 md:-mt-20 z-20 px-6 md:px-12 mb-12 md:mb-16">
         <div className="max-w-7xl mx-auto">
-          <div className="relative h-[440px] md:h-[640px] rounded-[2rem] overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.6)] border border-white/20 ring-1 ring-white/10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+          <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] md:aspect-[16/9] max-h-[620px] rounded-[2rem] overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.6)] border border-slate-200/30 ring-1 ring-white/10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <Image
-              src="/industrial-plant.jpg?v=4"
+              src="/industrial-plant.jpg?v=7"
               alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
               fill
-              className="object-cover object-center"
+              className="object-cover object-bottom"
               priority
+              quality={100}
+              unoptimized
             />
-            {/* High-Contrast Gradient Scrim for Crystal-Clear Readability over Monochrome Refinery */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 via-50% to-transparent pointer-events-none"></div>
+            {/* Localized Bottom Gradient Only: Leaves the upper sky, steam, and columns 100% bright, crisp & natural */}
+            <div className="absolute bottom-0 inset-x-0 h-[48%] bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none"></div>
 
-            <div className="absolute bottom-0 inset-x-0 p-8 md:p-16 w-full flex flex-col items-center text-center">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-mono tracking-wider uppercase mb-3.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                <span>Industrial Infrastructure &amp; Pan-India Distribution</span>
-              </div>
-              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight text-center drop-shadow-[0_2px_16px_rgba(0,0,0,0.8)]">
+            <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8 md:p-14 w-full flex flex-col items-center text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-3 md:mb-4 tracking-tight text-center drop-shadow-[0_2px_16px_rgba(0,0,0,0.9)]">
                 Global Import &amp; Distribution.
               </h2>
-              <p className="text-slate-100 max-w-2xl mx-auto text-lg md:text-xl font-normal leading-relaxed mb-8 text-center drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
+              <p className="text-slate-100 max-w-2xl mx-auto text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-6 md:mb-8 text-center drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)]">
                 Delivering uncompromised chemical solutions, HAZ-category warehousing, and complete supply chain integrity across the subcontinent.
               </p>
-              <Link href="/contact" className="inline-flex items-center justify-center bg-white text-slate-900 px-8 py-3.5 rounded-full font-semibold text-base hover:bg-slate-100 hover:-translate-y-0.5 transition-all duration-300 shadow-xl group">
+              <Link href="/contact" className="inline-flex items-center justify-center bg-white text-slate-900 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base hover:bg-slate-100 hover:-translate-y-0.5 transition-all duration-300 shadow-xl group">
                 Partner With Us <span className="material-symbols-outlined text-base ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </Link>
             </div>
