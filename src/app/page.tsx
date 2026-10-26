@@ -25,24 +25,23 @@ export default function HomePage() {
       `}} />
 
       {/* ── 1. FULL-WIDTH HERO BANNER ─────────────────────────────────────────── */}
-      <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[85vh] max-h-[820px] overflow-hidden animate-fade-in" style={{ animationDelay: '0s' }}>
+      <section className="relative w-full h-[60vh] sm:h-[70vh] md:h-[78vh] min-h-[480px] max-h-[740px] overflow-hidden animate-fade-in" style={{ animationDelay: '0s' }}>
         <Image
-          src="/industrial-plant.jpg?v=15"
+          src="/industrial-plant.jpg?v=16"
           alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
           fill
           className="object-cover object-center"
           priority
           quality={100}
-          unoptimized
         />
         {/* Directional bottom-to-center dark scrim for effortless white text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 via-40% to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 via-45% to-slate-950/25 pointer-events-none" />
 
-        <div className="absolute bottom-0 inset-x-0 px-6 sm:px-10 md:px-16 pb-10 sm:pb-14 md:pb-20 w-full flex flex-col items-center text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 md:mb-5 tracking-tight leading-[1.05] drop-shadow-[0_4px_24px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.2s', textShadow: '0 2px 16px rgba(0,0,0,0.85)' }}>
+        <div className="absolute bottom-0 inset-x-0 px-6 sm:px-10 md:px-16 pb-10 sm:pb-14 md:pb-16 w-full flex flex-col items-center text-center">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 md:mb-5 tracking-tight leading-[1.05] drop-shadow-[0_4px_24px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.2s', textShadow: '0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.8)' }}>
             Global Import &amp; Distribution.
           </h2>
-          <p className="text-white max-w-xl mx-auto text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-7 md:mb-9 drop-shadow-[0_2px_12px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.35s', textShadow: '0 1px 8px rgba(0,0,0,0.9)' }}>
+          <p className="text-white max-w-xl mx-auto text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-7 md:mb-9 drop-shadow-[0_2px_14px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.35s', textShadow: '0 2px 14px rgba(0,0,0,0.95)' }}>
             Delivering uncompromised chemical solutions, HAZ-category warehousing, and complete supply chain integrity across the subcontinent.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
