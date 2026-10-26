@@ -37,18 +37,18 @@ export default function HomePage() {
         {/* Directional bottom-to-center dark scrim for effortless white text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/60 via-45% to-slate-950/25 pointer-events-none" />
 
-        <div className="absolute bottom-0 inset-x-0 px-6 sm:px-10 md:px-16 pb-10 sm:pb-14 md:pb-16 w-full flex flex-col items-center text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 md:mb-5 tracking-tight leading-[1.05] drop-shadow-[0_4px_24px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.2s', textShadow: '0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.8)' }}>
+        <div className="absolute bottom-0 inset-x-0 px-5 sm:px-10 md:px-16 pb-8 sm:pb-12 md:pb-16 w-full flex flex-col items-center text-center">
+          <h2 className="text-[32px] sm:text-5xl md:text-7xl font-bold text-white mb-2.5 sm:mb-3 md:mb-5 tracking-tight leading-[1.08] drop-shadow-[0_4px_24px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.2s', textShadow: '0 2px 20px rgba(0,0,0,0.95), 0 0 40px rgba(0,0,0,0.8)' }}>
             Global Import &amp; Distribution.
           </h2>
-          <p className="text-white max-w-xl mx-auto text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-7 md:mb-9 drop-shadow-[0_2px_14px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.35s', textShadow: '0 2px 14px rgba(0,0,0,0.95)' }}>
+          <p className="text-white max-w-xl mx-auto text-sm sm:text-base md:text-xl font-normal leading-relaxed mb-6 sm:mb-7 md:mb-9 drop-shadow-[0_2px_14px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.35s', textShadow: '0 2px 14px rgba(0,0,0,0.95)' }}>
             Delivering uncompromised chemical solutions, HAZ-category warehousing, and complete supply chain integrity across the subcontinent.
           </p>
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <Link href="/contact" className="inline-flex items-center justify-center bg-white text-slate-900 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base hover:bg-slate-100 hover:-translate-y-0.5 transition-all duration-300 shadow-2xl group">
+          <div className="flex flex-col sm:flex-row items-center gap-2.5 sm:gap-4 w-full sm:w-auto animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+            <Link href="/contact" className="w-full max-w-[280px] sm:w-auto sm:max-w-none inline-flex items-center justify-center bg-white text-slate-900 px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base hover:bg-slate-100 hover:-translate-y-0.5 transition-all duration-300 shadow-2xl group">
               Partner With Us <span className="material-symbols-outlined text-base ml-2 group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </Link>
-            <Link href="/products" className="inline-flex items-center justify-center bg-white/15 backdrop-blur-sm border border-white/30 text-white px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base hover:bg-white/25 transition-all duration-300">
+            <Link href="/products" className="w-full max-w-[280px] sm:w-auto sm:max-w-none inline-flex items-center justify-center bg-white/15 backdrop-blur-sm border border-white/30 text-white px-7 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-sm sm:text-base hover:bg-white/25 transition-all duration-300">
               View Portfolio
             </Link>
           </div>

@@ -43,23 +43,28 @@ export default function PrincipalsPage() {
       `}} />
 
       {/* Hero Section - Compact */}
-      <section className="bg-slate-dark text-white py-10 md:py-14 border-b border-slate-900">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-3">
+      <section className="relative bg-slate-dark text-white py-12 md:py-16 border-b border-slate-900 overflow-hidden">
+        {/* Subtle ambient gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-950 to-slate-900/80 pointer-events-none" />
+        <div className="relative max-w-4xl mx-auto px-5 sm:px-8 md:px-12 text-center">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-3.5 sm:mb-4">
+            <span>Authorised Distribution Network</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-3 leading-tight">
             Strategic Alliances <span className="text-slate-400">Built on Trust.</span>
           </h1>
-          <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
             Connecting premier domestic and global chemical manufacturers with over 500+ industrial plants across India.
           </p>
         </div>
       </section>
 
-      {/* Principals Showcase - Blended White Background & Single Entrance Slide */}
-      <section className="py-14 md:py-20 bg-white overflow-hidden border-b border-slate-200">
+      {/* Principals Showcase - Blended White Background & Entrance Slide */}
+      <section className="py-12 md:py-20 bg-white overflow-hidden border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
-          {/* Top Row: 5 Principals sliding from left */}
-          <div className="overflow-x-auto no-scrollbar md:overflow-visible py-3">
-            <div className="animate-slide-left flex justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 min-w-max md:min-w-0 w-full mx-auto">
+          {/* Top Row: 5 Principals - swipeable from start on mobile */}
+          <div className="overflow-x-auto no-scrollbar md:overflow-visible py-3 -mx-4 px-4 md:mx-0 md:px-0">
+            <div className="animate-slide-left flex justify-start md:justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 min-w-max md:min-w-0 w-full mx-auto">
               {topPrincipals.map((principal) => (
                 <div
                   key={principal.name}
@@ -80,9 +85,9 @@ export default function PrincipalsPage() {
             </div>
           </div>
 
-          {/* Bottom Row: 4 Principals sliding from right */}
-          <div className="overflow-x-auto no-scrollbar md:overflow-visible py-3 mt-6 md:mt-10">
-            <div className="animate-slide-right flex justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 min-w-max md:min-w-0 w-full mx-auto">
+          {/* Bottom Row: 4 Principals - swipeable from start on mobile */}
+          <div className="overflow-x-auto no-scrollbar md:overflow-visible py-3 mt-6 md:mt-10 -mx-4 px-4 md:mx-0 md:px-0">
+            <div className="animate-slide-right flex justify-start md:justify-center items-center gap-6 sm:gap-8 md:gap-10 lg:gap-12 min-w-max md:min-w-0 w-full mx-auto">
               {bottomPrincipals.map((principal) => (
                 <div
                   key={principal.name}
