@@ -27,7 +27,7 @@ export default function HomePage() {
       {/* ── 1. FULL-WIDTH HERO BANNER ─────────────────────────────────────────── */}
       <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[90vh] max-h-[860px] overflow-hidden animate-fade-in" style={{ animationDelay: '0s' }}>
         <Image
-          src="/industrial-plant.jpg?v=12"
+          src="/industrial-plant.jpg?v=13"
           alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
           fill
           className="object-cover object-bottom"
@@ -35,8 +35,8 @@ export default function HomePage() {
           quality={100}
           unoptimized
         />
-        {/* Rich dark theme overlay for crystal-clear white text readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 via-50% to-slate-950/30 pointer-events-none" />
+        {/* Localized bottom gradient: lets the illuminated dusk sky and glowing towers shine naturally while keeping text sharp */}
+        <div className="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
 
         <div className="absolute bottom-0 inset-x-0 px-6 sm:px-10 md:px-16 pb-10 sm:pb-14 md:pb-20 w-full flex flex-col items-center text-center">
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 md:mb-5 tracking-tight leading-[1.05] drop-shadow-[0_4px_24px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
