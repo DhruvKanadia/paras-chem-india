@@ -27,7 +27,7 @@ export default function HomePage() {
       {/* ── 1. FULL-WIDTH HERO BANNER ─────────────────────────────────────────── */}
       <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[90vh] max-h-[860px] overflow-hidden animate-fade-in" style={{ animationDelay: '0s' }}>
         <Image
-          src="/industrial-plant.jpg?v=10"
+          src="/industrial-plant.jpg?v=11"
           alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
           fill
           className="object-cover object-bottom"
