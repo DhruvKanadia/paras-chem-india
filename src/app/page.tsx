@@ -27,7 +27,7 @@ export default function HomePage() {
       {/* ── 1. FULL-WIDTH HERO BANNER ─────────────────────────────────────────── */}
       <section className="relative w-full h-[65vh] sm:h-[75vh] md:h-[90vh] max-h-[860px] overflow-hidden animate-fade-in" style={{ animationDelay: '0s' }}>
         <Image
-          src="/industrial-plant.jpg?v=11"
+          src="/industrial-plant.jpg?v=12"
           alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
           fill
           className="object-cover object-bottom"
@@ -35,14 +35,14 @@ export default function HomePage() {
           quality={100}
           unoptimized
         />
-        {/* Localized bottom scrim only – sky & towers stay pristine */}
-        <div className="absolute bottom-0 inset-x-0 h-[55%] bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+        {/* Rich dark theme overlay for crystal-clear white text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/70 via-50% to-slate-950/30 pointer-events-none" />
 
         <div className="absolute bottom-0 inset-x-0 px-6 sm:px-10 md:px-16 pb-10 sm:pb-14 md:pb-20 w-full flex flex-col items-center text-center">
-          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 md:mb-5 tracking-tight leading-[1.05] drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)] animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-3 md:mb-5 tracking-tight leading-[1.05] drop-shadow-[0_4px_24px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
             Global Import &amp; Distribution.
           </h2>
-          <p className="text-slate-200 max-w-xl mx-auto text-base sm:text-lg md:text-xl font-light leading-relaxed mb-7 md:mb-9 drop-shadow-[0_1px_8px_rgba(0,0,0,0.9)] animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
+          <p className="text-slate-100 max-w-xl mx-auto text-base sm:text-lg md:text-xl font-normal leading-relaxed mb-7 md:mb-9 drop-shadow-[0_2px_14px_rgba(0,0,0,1)] animate-fade-in-up" style={{ animationDelay: '0.35s' }}>
             Delivering uncompromised chemical solutions, HAZ-category warehousing, and complete supply chain integrity across the subcontinent.
           </p>
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
