@@ -30,7 +30,7 @@ export default function HomePage() {
           src="/industrial-plant.jpg?v=8"
           alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
           fill
-          className="object-cover object-[center_60%]"
+          className="object-cover object-bottom"
           priority
           quality={100}
           unoptimized
