@@ -45,19 +45,19 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="relative h-[440px] md:h-[640px] rounded-[2rem] overflow-hidden shadow-[0_30px_70px_-15px_rgba(0,0,0,0.6)] border border-white/20 ring-1 ring-white/10 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <Image
-              src="/industrial-plant.jpg?v=3"
-              alt="Global Chemical Import & Distribution Terminal"
+              src="/industrial-plant.jpg?v=4"
+              alt="Industrial Chemical Manufacturing & Distribution Infrastructure"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
             />
-            {/* Cinematic Gradient Scrim for Rich Contrast & Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 via-45% to-slate-950/10 pointer-events-none"></div>
+            {/* High-Contrast Gradient Scrim for Crystal-Clear Readability over Monochrome Refinery */}
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/95 via-slate-950/50 via-50% to-transparent pointer-events-none"></div>
 
             <div className="absolute bottom-0 inset-x-0 p-8 md:p-16 w-full flex flex-col items-center text-center">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-mono tracking-wider uppercase mb-3.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-                <span>Global Maritime &amp; Overland Logistics</span>
+                <span>Industrial Infrastructure &amp; Pan-India Distribution</span>
               </div>
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight text-center drop-shadow-[0_2px_16px_rgba(0,0,0,0.8)]">
                 Global Import &amp; Distribution.
