@@ -1,32 +1,38 @@
-import Link from 'next/link';
+import Image from 'next/image';
 
 interface IndustryCardProps {
-  slug: string;
+  slug?: string;
   name: string;
-  icon: string;
+  icon?: string;
   description: string;
   chemicalCount?: number;
+  image?: string;
 }
 
-export default function IndustryCard({ slug, name, icon, description, chemicalCount }: IndustryCardProps) {
+export default function IndustryCard({ name, description, image }: IndustryCardProps) {
   return (
-    <Link
-      href={`/industries/${slug}`}
-      className="group block bg-white border border-slate-200 rounded-3xl p-10 h-full hover:shadow-2xl hover:border-slate-300 hover:-translate-y-1 transition-all duration-500 flex flex-col items-center text-center relative overflow-hidden"
-    >
-      <div className="mb-8 flex items-center justify-center">
-        <span className="material-symbols-outlined text-5xl text-slate-900">{icon}</span>
+    <div className="group flex flex-col h-full">
+      {/* Visual Header with Image */}
+      {image && (
+        <div className="relative h-56 sm:h-64 w-full overflow-hidden rounded-2xl bg-slate-100 mb-5">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
+          />
+        </div>
+      )}
+
+      {/* Content */}
+      <div className="flex-1 flex flex-col">
+        <h3 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 mb-2.5">
+          {name}
+        </h3>
+        <p className="text-slate-600 text-sm md:text-base leading-relaxed font-light">
+          {description}
+        </p>
       </div>
-      
-      <h3 className="text-2xl font-semibold tracking-tight text-slate-900 mb-4 text-center">{name}</h3>
-      <p className="text-slate-500 leading-relaxed flex-grow text-center">{description}</p>
-      
-      <div className="mt-12 flex items-center justify-between border-t border-slate-100 pt-6 w-full">
-        <span className="text-sm font-medium text-slate-400">{chemicalCount} Chemicals</span>
-        <span className="flex items-center gap-2 text-sm font-semibold text-slate-900 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
-          Explore <span className="material-symbols-outlined text-sm">arrow_forward</span>
-        </span>
-      </div>
-    </Link>
+    </div>
   );
 }

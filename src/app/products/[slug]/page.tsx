@@ -1,5 +1,5 @@
 import React from 'react';
-import { products, categories } from '@/data/products';
+import { products } from '@/data/products';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import ProductEnquiryForm from './ProductEnquiryForm';
@@ -22,31 +22,25 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     notFound();
   }
 
-  const category = categories.find(c => c.slug === product.categorySlug);
+  const hasCas = product.casNumber && product.casNumber !== 'TBA';
+  const hasFormula = product.formula && product.formula !== 'TBA';
 
   return (
     <div className="pb-24">
       {/* Page Header */}
-      <section className="bg-surface-gray border-b border-border-subtle py-12 px-margin-page text-center">
+      <section className="bg-surface-gray border-b border-border-subtle py-12 px-4 md:px-margin-page text-center">
         <div className="max-w-container-max mx-auto flex flex-col items-center text-center">
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <Link href={`/products?category=${product.categorySlug}`} className="text-body-sm text-industrial-blue hover:underline font-medium">
-              {category?.name || product.categorySlug}
-            </Link>
-            <span className="bg-chemical-green/10 text-chemical-green px-2 py-1 rounded text-label-sm font-bold uppercase tracking-wider">
-              {product.status || 'In Stock'}
-            </span>
-          </div>
-          
           <div className="flex flex-col items-center justify-center gap-6 text-center">
             <div>
               <h1 className="font-display text-display mb-4 text-on-surface text-center">{product.name}</h1>
-              <div className="flex justify-center gap-6 font-label-md text-on-surface-variant">
-                <span>CAS: {product.casNumber}</span>
-                <span>Formula: {product.formula}</span>
-              </div>
+              {(hasCas || hasFormula) && (
+                <div className="flex justify-center gap-6 font-label-md text-on-surface-variant font-mono">
+                  {hasCas && <span>CAS: {product.casNumber}</span>}
+                  {hasFormula && <span>Formula: {product.formula}</span>}
+                </div>
+              )}
             </div>
-            <Link href="/contact" className="bg-industrial-blue text-on-primary px-8 py-3 rounded hover:bg-blue-700 transition-colors inline-block text-center font-medium">
+            <Link href="/contact" className="bg-industrial-blue text-on-primary px-8 py-3 rounded hover:bg-blue-700 transition-colors inline-block text-center font-medium shadow-sm">
               Request Quote
             </Link>
           </div>
@@ -54,7 +48,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* Main Content */}
-      <div className="max-w-container-max mx-auto px-margin-page mt-12">
+      <div className="max-w-container-max mx-auto px-4 md:px-margin-page mt-12">
         <div className="grid lg:grid-cols-12 gap-gutter">
           {/* LEFT COLUMN */}
           <div className="lg:col-span-8 space-y-12">
@@ -116,63 +110,25 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
               <section>
                 <h2 className="font-headline-lg mb-6 text-center">Applications & Industries</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {product.applications.map((app, i) => {
-                    const cardContent = (
-                      <div className="p-6 rounded border border-border-subtle bg-white h-full hover:border-industrial-blue transition-colors flex flex-col items-center text-center">
-                        <div className="flex items-center justify-center gap-3 mb-3">
-                          <span className="material-symbols-outlined text-industrial-blue">{app.icon || 'science'}</span>
-                          <h3 className="font-headline-md text-center">{app.title}</h3>
-                        </div>
-                        <p className="text-body-md text-on-surface-variant">{app.description}</p>
+                  {product.applications.map((app, i) => (
+                    <div key={i} className="p-6 rounded border border-border-subtle bg-white h-full flex flex-col items-center text-center">
+                      <div className="flex items-center justify-center gap-3 mb-3">
+                        <span className="material-symbols-outlined text-industrial-blue">{app.icon || 'science'}</span>
+                        <h3 className="font-headline-md text-center">{app.title}</h3>
                       </div>
-                    );
-
-                    if (app.industrySlug) {
-                      return (
-                        <Link key={i} href={`/industries/${app.industrySlug}`} className="block">
-                          {cardContent}
-                        </Link>
-                      );
-                    }
-                    return <div key={i}>{cardContent}</div>;
-                  })}
+                      <p className="text-body-md text-on-surface-variant">{app.description}</p>
+                    </div>
+                  ))}
                 </div>
               </section>
             )}
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="lg:col-span-4 space-y-8">
-            <div className="bg-surface-gray p-6 rounded border border-border-subtle sticky top-24">
+          <div className="lg:col-span-4">
+            <div className="bg-surface-gray p-6 rounded border border-border-subtle">
               <h3 className="font-headline-md mb-4 border-b border-border-subtle pb-4 text-center">Quick Enquiry</h3>
               <ProductEnquiryForm productSlug={product.slug} productName={product.name} />
-            </div>
-
-            <div className="p-6 rounded border border-border-subtle bg-white">
-              <h3 className="font-headline-md mb-4 text-center">Documents</h3>
-              <ul className="space-y-3">
-                <li>
-                  <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/919326772266?text=${encodeURIComponent(`Hi, I would like to request the Safety Data Sheet (SDS) for ${product.name}. Please share it.`)}`} className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
-                    <span className="material-symbols-outlined text-industrial-blue">picture_as_pdf</span>
-                    <span className="text-body-md flex-1 group-hover:text-industrial-blue">Request via WhatsApp</span>
-                    <span className="material-symbols-outlined text-border-subtle group-hover:text-industrial-blue">chat</span>
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/919326772266?text=${encodeURIComponent(`Hi, I would like to request the Technical Data Sheet (TDS) for ${product.name}. Please share it.`)}`} className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
-                    <span className="material-symbols-outlined text-industrial-blue">description</span>
-                    <span className="text-body-md flex-1 group-hover:text-industrial-blue">Request via WhatsApp</span>
-                    <span className="material-symbols-outlined text-border-subtle group-hover:text-industrial-blue">chat</span>
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" rel="noopener noreferrer" href={`https://wa.me/919326772266?text=${encodeURIComponent(`Hi, I would like to request the Certificate of Analysis for ${product.name}. Please share it.`)}`} className="flex items-center gap-3 p-3 rounded border border-border-subtle hover:bg-surface-gray transition-colors group">
-                    <span className="material-symbols-outlined text-chemical-green">verified</span>
-                    <span className="text-body-md flex-1 group-hover:text-chemical-green">Request via WhatsApp</span>
-                    <span className="material-symbols-outlined text-border-subtle group-hover:text-chemical-green">chat</span>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

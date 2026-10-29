@@ -30,6 +30,7 @@ export const industries: Industry[] = [
     icon: 'cleaning_services',
     description: 'High-quality chemical supplies for the formulation of soaps, liquid detergents, and industrial cleaners.',
     heroDescription: 'Comprehensive cleaning chemical solutions for household, commercial, and industrial hygiene products. We supply key ingredients like surfactants, builders, and bleaches for optimum cleaning performance.',
+    image: '/industries/bg_soaps.jpg',
     applications: [
       {
         icon: 'cleaning_services',
@@ -61,6 +62,7 @@ export const industries: Industry[] = [
     icon: 'styler',
     description: 'Specialty textile processing chemicals for pre-treatment, dyeing, printing, and finishing.',
     heroDescription: 'End-to-end chemical solutions for textile manufacturing, ensuring brilliant colors, excellent fastness, and superior fabric feel through advanced dyeing, finishing, and bleaching agents.',
+    image: '/industries/bg_textile.jpg',
     applications: [
       {
         icon: 'palette',
@@ -92,6 +94,7 @@ export const industries: Industry[] = [
     icon: 'restaurant',
     description: 'Food-grade chemicals, additives, and preservatives ensuring safety and quality.',
     heroDescription: 'Supplying top-tier food-grade ingredients and additives that enhance preservation, flavor profiling, and nutritional stability, complying with stringent food safety standards.',
+    image: '/industries/bg_food.jpg',
     applications: [
       {
         icon: 'shield',
@@ -123,6 +126,7 @@ export const industries: Industry[] = [
     icon: 'oil_barrel',
     description: 'Specialized oilfield chemicals for drilling, cementing, and production operations.',
     heroDescription: 'High-performance chemicals for upstream oil and gas operations, including advanced drilling fluid additives, well stimulation agents, and reliable exploration/production chemicals.',
+    image: '/industries/bg_oil.jpg',
     applications: [
       {
         icon: 'water_drop',
@@ -153,6 +157,7 @@ export const industries: Industry[] = [
     icon: 'category',
     description: 'Vital additives and processing aids for polymer compounding and plastic manufacturing.',
     heroDescription: 'Extensive portfolio of plasticizer chemicals, fillers, lubricants, and polymer stabilizers designed to improve the physical properties and processability of plastic products.',
+    image: '/industries/bg_plastic.jpg',
     applications: [
       {
         icon: 'layers',
@@ -183,6 +188,7 @@ export const industries: Industry[] = [
     icon: 'medication',
     description: 'High-purity pharmaceutical intermediates, solvents, and excipients for drug manufacturing.',
     heroDescription: 'Reliable supply of critical API building blocks, high-purity solvents, and essential excipients supporting the production of safe and effective pharmaceutical formulations.',
+    image: '/industries/bg_pharma.jpg',
     applications: [
       {
         icon: 'medication',
@@ -214,6 +220,7 @@ export const industries: Industry[] = [
     icon: 'science',
     description: 'A diverse portfolio of general-purpose industrial chemicals for multiple manufacturing sectors.',
     heroDescription: 'Providing a broad spectrum of essential chemical commodities, water treatment solutions, and specialty compounds that cater to general industrial applications and diverse manufacturing needs.',
+    image: '/industrial-plant.jpg',
     applications: [
       {
         icon: 'precision_manufacturing',

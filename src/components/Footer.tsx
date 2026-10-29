@@ -49,16 +49,16 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/">
-              <Image src="/logo.jpg" alt="Paras Chem India" width={160} height={80} className="h-20 w-auto object-contain brightness-0 invert mb-4" />
+              <Image src="/logo.jpg" alt="Paras Chem India" width={160} height={80} className="h-20 w-auto object-contain mb-4 rounded-lg" />
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
               One of India&apos;s leading chemical distributors, supplying high-quality chemicals across 7+ industries for over 27 years.
             </p>
             <div className="flex gap-3">
-              <a href="mailto:info@paraschemindia.com" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Email">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@paraschemindia.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Email">
                 <span className="material-symbols-outlined text-lg">mail</span>
               </a>
-              <a href="https://wa.me/919326772266" target="_blank" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-green-600 transition-colors" title="WhatsApp">
+              <a href="https://wa.me/919323667667" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-green-600 transition-colors" title="WhatsApp">
                 <span className="material-symbols-outlined text-lg">chat</span>
               </a>
               <a href="tel:+919323667667" className="w-10 h-10 rounded-lg bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors" title="Call">
@@ -111,7 +111,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <span className="material-symbols-outlined text-blue-400">mail</span>
-                <a href="mailto:info@paraschemindia.com" className="text-slate-400 hover:text-white transition-colors text-sm">info@paraschemindia.com</a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@paraschemindia.com" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm">info@paraschemindia.com</a>
               </div>
               <div className="mt-4 pt-4 border-t border-slate-800">
                 <p className="text-xs text-slate-500">GSTIN: 27ACVPK1617L1Z4</p>
