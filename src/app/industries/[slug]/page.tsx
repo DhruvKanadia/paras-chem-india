@@ -25,7 +25,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
   return (
     <div>
       {/* Cinematic Hero */}
-      <section className="relative bg-slate-950 text-on-primary py-24 md:py-32 px-margin-page overflow-hidden">
+      <section className="relative bg-slate-950 text-on-primary py-24 md:py-32 px-4 md:px-margin-page overflow-hidden">
         {industry.image && (
           <Image
             src={industry.image}
@@ -51,7 +51,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       </section>
 
       {/* Industry Overview */}
-      <section className="py-16 px-margin-page max-w-container-max mx-auto">
+      <section className="py-16 px-4 md:px-margin-page max-w-container-max mx-auto">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-body-lg text-on-surface-variant leading-relaxed">
             {industry.description}
@@ -61,7 +61,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
 
       {/* Core Applications */}
       {industry.applications && industry.applications.length > 0 && (
-        <section className="py-16 bg-surface-gray px-margin-page">
+        <section className="py-16 bg-surface-gray px-4 md:px-margin-page">
           <div className="max-w-container-max mx-auto">
             <h2 className="font-headline-lg text-center mb-12">Core Applications</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
@@ -94,7 +94,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
 
       {/* Featured Chemicals Table */}
       {industry.chemicals && industry.chemicals.length > 0 && (
-        <section className="py-16 px-margin-page">
+        <section className="py-16 px-4 md:px-margin-page">
           <div className="max-w-container-max mx-auto text-center">
             <h2 className="font-headline-lg mb-8 text-center">Featured Chemical Products</h2>
             <div className="overflow-x-auto rounded border border-border-subtle">
@@ -134,7 +134,7 @@ export default function IndustryDetailPage({ params }: { params: { slug: string 
       )}
 
       {/* Consultation CTA */}
-      <section className="bg-industrial-blue text-on-primary py-16 px-margin-page text-center">
+      <section className="bg-industrial-blue text-on-primary py-16 px-4 md:px-margin-page text-center">
         <div className="max-w-2xl mx-auto flex flex-col items-center">
           <span className="material-symbols-outlined text-5xl mb-4 opacity-80">support_agent</span>
           <h2 className="font-headline-lg mb-4">Need Technical Consultation?</h2>

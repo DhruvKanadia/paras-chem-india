@@ -61,7 +61,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-slate-dark py-20 md:py-28 px-margin-page border-y border-slate-900">
+      <section className="bg-slate-dark py-20 md:py-28 px-4 md:px-margin-page border-y border-slate-900">
         <div className="max-w-container-max mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
             <div className="text-center flex flex-col items-center justify-center">
@@ -85,7 +85,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-slate-50 border-t border-slate-100 py-24 md:py-28 px-margin-page text-center">
+      <section className="bg-slate-50 border-t border-slate-100 py-24 md:py-28 px-4 md:px-margin-page text-center">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 tracking-tighter">Require Custom Formulation?</h2>
           <p className="text-lg md:text-xl text-slate-500 mb-10 leading-relaxed max-w-2xl mx-auto font-light">

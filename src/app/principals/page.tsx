@@ -47,9 +47,9 @@ export default function PrincipalsPage() {
         {/* Subtle ambient gradient overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-950 to-slate-900/80 pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-5 sm:px-8 md:px-12 text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-400/20 text-blue-400 text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-3.5 sm:mb-4">
-            <span>Authorised Distribution Network</span>
-          </div>
+          <p className="text-xs sm:text-sm tracking-widest uppercase text-slate-300 font-semibold mb-3.5 sm:mb-4">
+            Authorised Distribution Network
+          </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-3 leading-tight">
             Strategic Alliances <span className="text-slate-400">Built on Trust.</span>
           </h1>

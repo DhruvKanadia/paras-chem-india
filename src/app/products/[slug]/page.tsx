@@ -28,7 +28,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
   return (
     <div className="pb-24">
       {/* Page Header */}
-      <section className="bg-surface-gray border-b border-border-subtle py-12 px-margin-page text-center">
+      <section className="bg-surface-gray border-b border-border-subtle py-12 px-4 md:px-margin-page text-center">
         <div className="max-w-container-max mx-auto flex flex-col items-center text-center">
           <div className="flex flex-col items-center justify-center gap-6 text-center">
             <div>
@@ -48,7 +48,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* Main Content */}
-      <div className="max-w-container-max mx-auto px-margin-page mt-12">
+      <div className="max-w-container-max mx-auto px-4 md:px-margin-page mt-12">
         <div className="grid lg:grid-cols-12 gap-gutter">
           {/* LEFT COLUMN */}
           <div className="lg:col-span-8 space-y-12">

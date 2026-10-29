@@ -67,14 +67,14 @@ export default function ContactPage() {
       />
 
       {/* Header */}
-      <section className="text-center py-12 md:py-16 px-margin-page max-w-container-max mx-auto border-b border-border-subtle mb-12">
+      <section className="text-center py-12 md:py-16 px-4 md:px-margin-page max-w-container-max mx-auto border-b border-border-subtle mb-12">
         <h1 className="font-display text-display mb-4">Get in Touch</h1>
         <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto">
           Whether you need a bulk quote, technical support, or have a general enquiry, our team is ready to assist you.
         </p>
       </section>
 
-      <div className="px-margin-page max-w-container-max mx-auto">
+      <div className="px-4 md:px-margin-page max-w-container-max mx-auto">
         <div className="grid grid-cols-12 gap-gutter">
           
           {/* LEFT COLUMN */}
